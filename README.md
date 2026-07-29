@@ -78,3 +78,13 @@ python3 ../genapp/tools/genvol/genvol.py \
   --fit-window --window-tokens 200000 --chars-per-token 3.4 \
   --seed 20260729 -o .
 ```
+
+## License
+
+[MIT](LICENSE), matching the generator.
+
+Every file here is machine-generated from templates authored for `genvol`. The
+estate is *modelled on* the IBM GenApp sample — same layering, same idioms — but
+contains none of its code, and the generator never reads it. IBM's GenApp is
+separately licensed under EPL-2.0 in
+[its own repository](https://github.com/cicsdev/cics-genapp).
