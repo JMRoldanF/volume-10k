@@ -17,7 +17,7 @@ and no z/OS dependency.
 | Source lines | 5,114,295 |
 | Source size | 221 MiB |
 | JCL jobs | 434 (`jcl/*.jcl`) |
-| BMS mapsets | 90 (`bms/*.bms`) |
+| BMS mapsets | 91 (`bms/*.bms`) |
 | CSD definitions | `cntl/csdvol.txt` (TRANSID → program) |
 | DDL | `ddl/schema.sql` |
 | Ground truth | `manifest.json` |
@@ -58,6 +58,16 @@ fallback path exists.
 The budget assumes **3.4 characters per token**, which is a placeholder, not a
 measured value. Measure it on this corpus with `count_tokens` before relying on
 the cap.
+
+## BMS
+
+Continued statements carry the `X` continuation character in **column 72**,
+as HLASM requires. Field names avoid assembler instruction mnemonics, except
+in `bms/ZZMNEMON.bms`, whose fields are deliberately named `TITLE`, `START`,
+`END`, `COPY`, `EQU`, `USING`, `SPACE` and `PRINT` — all valid in the name
+field, all mis-read by a lexer that matches keywords by token rather than by
+column position. It is recorded in `injected.bms_mnemonic_collision`, so a
+finding there is real rather than an artifact.
 
 ## Deliberately hostile cases
 
