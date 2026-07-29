@@ -15,4 +15,5 @@
                      07 CA-LASTCHANGED     PIC X(26).
                      07 CA-BROKERID        PIC 9(10).
                      07 CA-PAYMENT         PIC 9(6).
-                  05 CA-POLICY-FILLER      PIC X(32400).
+                  05 CA-EMAIL              PIC X(60).
+                  05 CA-POLICY-FILLER      PIC X(32340).
