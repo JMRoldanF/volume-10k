@@ -1,0 +1,15 @@
+*********************************************************************** 00000010
+* ZMTMAP21 -- generated volume-test mapset                              00000020
+***********************************************************************
+ZMTMAP21 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),               X
+               LANG=COBOL,STORAGE=AUTO,TIOAPFX=YES
+ZMTMAP2I DFHMDI SIZE=(24,80)                                            00000060
+         DFHMDF POS=(1,1),LENGTH=60,ATTRB=(PROT),INITIAL='BROKER ENQUIRX00000070
+                PF3 Exit'                                               00000080
+HDRTTL   DFHMDF POS=(3,1),LENGTH=40,ATTRB=(PROT)        screen title
+CUSTNO   DFHMDF POS=(5,20),LENGTH=10,ATTRB=(UNPROT,IC)
+POLNO    DFHMDF POS=(6,20),LENGTH=10,ATTRB=(UNPROT)                     00000110
+PREMIUM  DFHMDF POS=(7,20),LENGTH=9,ATTRB=(UNPROT)                      00000120
+ERRMSG   DFHMDF POS=(23,1),LENGTH=70,ATTRB=(PROT,BRT)                   00000130
+         DFHMSD TYPE=FINAL
+         END                                                            00000150

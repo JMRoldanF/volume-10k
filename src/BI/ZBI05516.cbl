@@ -56,22 +56,17 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
-                05 WS-T-COLOUR         PIC X(12).
-                05 WS-T-TERM           PIC X(12).
-                05 WS-T-STATUS-CODE    PIC X(12).
-                05 WS-T-AGENT-CODE     PIC X(12).
+                05 WS-T-MODEL          PIC X(12).
+                05 WS-T-POSTCODE       PIC X(12).
+                05 WS-T-PREMIUM        PIC X(12).
+                05 WS-T-SUM-ASSURED    PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZBI08116              PIC X(8) VALUE 'ZBI08116'.
-       01  MOD-ZBI07186              PIC X(8) VALUE 'ZBI07186'.
+       01  MOD-ZHO09996              PIC X(8) VALUE 'ZHO09996'.
 
       * VSAM record areas
-       01  KSDSBI05-REC.
-             03 REC-KEY                PIC 9(10).
-             03 REC-CUSTOMER           PIC 9(10).
-             03 REC-DATA               PIC X(160).
-       01  KSDSBI77-REC.
+       01  KSDSBI44-REC.
              03 REC-KEY                PIC 9(10).
              03 REC-CUSTOMER           PIC 9(10).
              03 REC-DATA               PIC X(160).
@@ -84,8 +79,7 @@
        01  DFHCOMMAREA.
                COPY ZKCOMMON.
                COPY ZKBI0004.
-               COPY ZKBI0006.
-               COPY ZKBI0007.
+               COPY ZKBI0002.
       ******************************************************************
       * P R O C E D U R E S                                            *
       ******************************************************************
@@ -104,23 +98,17 @@
                END-IF.
                MOVE EIBCALEN TO WS-CALEN.
                SET WS-ADDR-COMMAREA TO ADDRESS OF DFHCOMMAREA.
-               PERFORM CALL-ZBI08116-001.
-               PERFORM CALL-ZBI07186-002.
+               PERFORM CALL-ZHO09996-001.
                EXEC CICS RETURN END-EXEC.
       *----------------------------------------------------------------*
-       CALL-ZBI08116-001.
-               CALL 'ZBI08116' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
+       CALL-ZHO09996-001.
+               EXEC CICS LINK PROGRAM('ZHO09996')
+                         COMMAREA(DFHCOMMAREA)
+                         LENGTH(WS-CALEN)
+                         RESP(WS-RESP)
+               END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08116 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI07186-002.
-               CALL 'ZBI07186' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07186 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO09996 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*

@@ -56,16 +56,18 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
-                05 WS-T-HOUSE-TYPE     PIC X(12).
-                05 WS-T-COLOUR         PIC X(12).
-                05 WS-T-STATUS-CODE    PIC X(12).
-                05 WS-T-EQUITIES       PIC X(12).
+                05 WS-T-BROKER-ID      PIC X(12).
+                05 WS-T-ROOF-TYPE      PIC X(12).
+                05 WS-T-MANAGED-FUND   PIC X(12).
+                05 WS-T-CC-RATING      PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZAG08218              PIC X(8) VALUE 'ZAG08218'.
-       01  MOD-ZMT06611              PIC X(8) VALUE 'ZMT06611'.
-       01  MOD-ZCL09999              PIC X(8) VALUE 'ZCL09999'.
+       01  MOD-ZMT07504              PIC X(8) VALUE 'ZMT07504'.
+       01  MOD-ZCU09998              PIC X(8) VALUE 'ZCU09998'.
+
+      * Dynamically resolved module names
+       01  WS-SUBNAME-1              PIC X(8) VALUE SPACES.
 
       * SQL communication area
            EXEC SQL INCLUDE SQLCA END-EXEC.
@@ -85,7 +87,8 @@
        LINKAGE SECTION.
        01  DFHCOMMAREA.
                COPY ZKCOMMON.
-               COPY ZKMT0008.
+               COPY ZKMT0011.
+               COPY ZKMT0007.
                COPY ZKMT0006.
       ******************************************************************
       * P R O C E D U R E S                                            *
@@ -100,52 +103,43 @@
                IF EIBCALEN IS EQUAL TO ZERO
                   MOVE ' NO COMMAREA RECEIVED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
-                  EXEC CICS ABEND ABCODE('LGRC')
+                  EXEC CICS ABEND ABCODE('LGCA')
                             NODUMP END-EXEC
                END-IF.
                MOVE EIBCALEN TO WS-CALEN.
                SET WS-ADDR-COMMAREA TO ADDRESS OF DFHCOMMAREA.
-               PERFORM CALL-ZAG08218-001.
-               PERFORM CALL-ZMT06611-002.
-               PERFORM CALL-ZCL09999-003.
-               PERFORM FORMAT-NCD-YEARS-0001.
+               PERFORM CALL-ZMT07504-001.
+               PERFORM CALL-ZMT06322-002.
+               PERFORM CALL-ZCU09998-003.
                EXEC CICS RETURN END-EXEC.
       *----------------------------------------------------------------*
-       CALL-ZAG08218-001.
-               CALL 'ZAG08218' USING DFHCOMMAREA
+       CALL-ZMT07504-001.
+               CALL 'ZMT07504' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08218 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07504 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT06611-002.
-               CALL 'ZMT06611' USING DFHCOMMAREA
+       CALL-ZMT06322-002.
+               MOVE 'ZMT06322' TO WS-SUBNAME-1
+               CALL WS-SUBNAME-1 USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06611 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06322 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL09999-003.
-               EXEC CICS LINK PROGRAM('ZCL09999')
+       CALL-ZCU09998-003.
+               EXEC CICS LINK PROGRAM('ZCU09998')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL09999 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU09998 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
-      *----------------------------------------------------------------*
-       FORMAT-NCD-YEARS-0001.
-               PERFORM VARYING WS-IX FROM 1 BY 1
-                           UNTIL WS-IX > WS-TABLE-COUNT
-                  ADD WS-T-AMOUNT(WS-IX) TO WS-PREMIUM-TOTAL
-                  IF WS-T-AMOUNT(WS-IX) = ZERO
-                     ADD 1 TO WS-ENTRY-COUNT
-                  END-IF
-               END-PERFORM.
       *----------------------------------------------------------------*
        WRITE-ERROR-MESSAGE.
                EXEC CICS ASKTIME ABSTIME(ABS-TIME) END-EXEC.

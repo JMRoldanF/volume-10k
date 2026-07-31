@@ -57,313 +57,313 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
-                05 WS-T-HOUSE-TYPE     PIC X(12).
-                05 WS-T-EXCESS         PIC X(12).
-                05 WS-T-REG-NUMBER     PIC X(12).
-                05 WS-T-MAKE           PIC X(12).
+                05 WS-T-POSTCODE       PIC X(12).
+                05 WS-T-CC-RATING      PIC X(12).
+                05 WS-T-BEDROOMS       PIC X(12).
+                05 WS-T-AGENT-CODE     PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZRE06517              PIC X(8) VALUE 'ZRE06517'.
-       01  MOD-ZMT08551              PIC X(8) VALUE 'ZMT08551'.
-       01  MOD-ZPA07759              PIC X(8) VALUE 'ZPA07759'.
-       01  MOD-ZMT08371              PIC X(8) VALUE 'ZMT08371'.
-       01  MOD-ZHO07042              PIC X(8) VALUE 'ZHO07042'.
-       01  MOD-ZCL07815              PIC X(8) VALUE 'ZCL07815'.
-       01  MOD-ZHO07702              PIC X(8) VALUE 'ZHO07702'.
-       01  MOD-ZUW08400              PIC X(8) VALUE 'ZUW08400'.
-       01  MOD-ZCU06824              PIC X(8) VALUE 'ZCU06824'.
-       01  MOD-ZMT07741              PIC X(8) VALUE 'ZMT07741'.
-       01  MOD-ZBI06606              PIC X(8) VALUE 'ZBI06606'.
-       01  MOD-ZEN06353              PIC X(8) VALUE 'ZEN06353'.
-       01  MOD-ZEN06433              PIC X(8) VALUE 'ZEN06433'.
-       01  MOD-ZAG07688              PIC X(8) VALUE 'ZAG07688'.
-       01  MOD-ZCU08034              PIC X(8) VALUE 'ZCU08034'.
-       01  MOD-ZHO08682              PIC X(8) VALUE 'ZHO08682'.
-       01  MOD-ZAG06868              PIC X(8) VALUE 'ZAG06868'.
-       01  MOD-ZCL07925              PIC X(8) VALUE 'ZCL07925'.
-       01  MOD-ZAG06678              PIC X(8) VALUE 'ZAG06678'.
-       01  MOD-ZBI06546              PIC X(8) VALUE 'ZBI06546'.
-       01  MOD-ZBI06826              PIC X(8) VALUE 'ZBI06826'.
-       01  MOD-ZMT07661              PIC X(8) VALUE 'ZMT07661'.
-       01  MOD-ZRE07577              PIC X(8) VALUE 'ZRE07577'.
-       01  MOD-ZAG06758              PIC X(8) VALUE 'ZAG06758'.
-       01  MOD-ZEN07073              PIC X(8) VALUE 'ZEN07073'.
-       01  MOD-ZHO06552              PIC X(8) VALUE 'ZHO06552'.
-       01  MOD-ZCU07254              PIC X(8) VALUE 'ZCU07254'.
-       01  MOD-ZUW06600              PIC X(8) VALUE 'ZUW06600'.
-       01  MOD-ZUW07430              PIC X(8) VALUE 'ZUW07430'.
-       01  MOD-ZBI06616              PIC X(8) VALUE 'ZBI06616'.
-       01  MOD-ZAG07768              PIC X(8) VALUE 'ZAG07768'.
-       01  MOD-ZUW06330              PIC X(8) VALUE 'ZUW06330'.
-       01  MOD-ZCL08495              PIC X(8) VALUE 'ZCL08495'.
-       01  MOD-ZAG08458              PIC X(8) VALUE 'ZAG08458'.
-       01  MOD-ZPA06349              PIC X(8) VALUE 'ZPA06349'.
-       01  MOD-ZMT06411              PIC X(8) VALUE 'ZMT06411'.
-       01  MOD-ZAG06468              PIC X(8) VALUE 'ZAG06468'.
-       01  MOD-ZRE07317              PIC X(8) VALUE 'ZRE07317'.
-       01  MOD-ZUW06360              PIC X(8) VALUE 'ZUW06360'.
-       01  MOD-ZMT08471              PIC X(8) VALUE 'ZMT08471'.
-       01  MOD-ZCU08594              PIC X(8) VALUE 'ZCU08594'.
-       01  MOD-ZBI08226              PIC X(8) VALUE 'ZBI08226'.
-       01  MOD-ZHO06372              PIC X(8) VALUE 'ZHO06372'.
-       01  MOD-ZMT07881              PIC X(8) VALUE 'ZMT07881'.
-       01  MOD-ZAG07058              PIC X(8) VALUE 'ZAG07058'.
-       01  MOD-ZBI07396              PIC X(8) VALUE 'ZBI07396'.
-       01  MOD-ZBI08216              PIC X(8) VALUE 'ZBI08216'.
-       01  MOD-ZCU07424              PIC X(8) VALUE 'ZCU07424'.
-       01  MOD-ZUW07220              PIC X(8) VALUE 'ZUW07220'.
-       01  MOD-ZCU07884              PIC X(8) VALUE 'ZCU07884'.
-       01  MOD-ZEN08033              PIC X(8) VALUE 'ZEN08033'.
-       01  MOD-ZMT06821              PIC X(8) VALUE 'ZMT06821'.
-       01  MOD-ZPA08549              PIC X(8) VALUE 'ZPA08549'.
-       01  MOD-ZUW07780              PIC X(8) VALUE 'ZUW07780'.
-       01  MOD-ZBI07416              PIC X(8) VALUE 'ZBI07416'.
-       01  MOD-ZAG07928              PIC X(8) VALUE 'ZAG07928'.
-       01  MOD-ZMT06471              PIC X(8) VALUE 'ZMT06471'.
-       01  MOD-ZEN06793              PIC X(8) VALUE 'ZEN06793'.
-       01  MOD-ZHO07992              PIC X(8) VALUE 'ZHO07992'.
-       01  MOD-ZMT07141              PIC X(8) VALUE 'ZMT07141'.
-       01  MOD-ZAG07748              PIC X(8) VALUE 'ZAG07748'.
-       01  MOD-ZRE07387              PIC X(8) VALUE 'ZRE07387'.
-       01  MOD-ZEN07403              PIC X(8) VALUE 'ZEN07403'.
-       01  MOD-ZUW06520              PIC X(8) VALUE 'ZUW06520'.
-       01  MOD-ZAG07498              PIC X(8) VALUE 'ZAG07498'.
-       01  MOD-ZAG08548              PIC X(8) VALUE 'ZAG08548'.
-       01  MOD-ZEN07423              PIC X(8) VALUE 'ZEN07423'.
-       01  MOD-ZEN07053              PIC X(8) VALUE 'ZEN07053'.
-       01  MOD-ZAG06998              PIC X(8) VALUE 'ZAG06998'.
-       01  MOD-ZRE06777              PIC X(8) VALUE 'ZRE06777'.
-       01  MOD-ZAG06898              PIC X(8) VALUE 'ZAG06898'.
-       01  MOD-ZRE07227              PIC X(8) VALUE 'ZRE07227'.
-       01  MOD-ZEN07273              PIC X(8) VALUE 'ZEN07273'.
-       01  MOD-ZCL07885              PIC X(8) VALUE 'ZCL07885'.
-       01  MOD-ZPA06979              PIC X(8) VALUE 'ZPA06979'.
-       01  MOD-ZEN07003              PIC X(8) VALUE 'ZEN07003'.
-       01  MOD-ZCL06655              PIC X(8) VALUE 'ZCL06655'.
-       01  MOD-ZRE07417              PIC X(8) VALUE 'ZRE07417'.
-       01  MOD-ZPA07969              PIC X(8) VALUE 'ZPA07969'.
-       01  MOD-ZEN06653              PIC X(8) VALUE 'ZEN06653'.
-       01  MOD-ZRE07567              PIC X(8) VALUE 'ZRE07567'.
-       01  MOD-ZUW08200              PIC X(8) VALUE 'ZUW08200'.
-       01  MOD-ZCU07204              PIC X(8) VALUE 'ZCU07204'.
-       01  MOD-ZEN06463              PIC X(8) VALUE 'ZEN06463'.
-       01  MOD-ZHO07092              PIC X(8) VALUE 'ZHO07092'.
-       01  MOD-ZCL08225              PIC X(8) VALUE 'ZCL08225'.
-       01  MOD-ZHO06592              PIC X(8) VALUE 'ZHO06592'.
-       01  MOD-ZUW08220              PIC X(8) VALUE 'ZUW08220'.
-       01  MOD-ZCU06304              PIC X(8) VALUE 'ZCU06304'.
-       01  MOD-ZEN08313              PIC X(8) VALUE 'ZEN08313'.
-       01  MOD-ZEN07613              PIC X(8) VALUE 'ZEN07613'.
-       01  MOD-ZBI08176              PIC X(8) VALUE 'ZBI08176'.
-       01  MOD-ZRE06757              PIC X(8) VALUE 'ZRE06757'.
-       01  MOD-ZAG06958              PIC X(8) VALUE 'ZAG06958'.
-       01  MOD-ZCU08134              PIC X(8) VALUE 'ZCU08134'.
-       01  MOD-ZRE06497              PIC X(8) VALUE 'ZRE06497'.
-       01  MOD-ZHO06972              PIC X(8) VALUE 'ZHO06972'.
-       01  MOD-ZEN08553              PIC X(8) VALUE 'ZEN08553'.
-       01  MOD-ZHO07022              PIC X(8) VALUE 'ZHO07022'.
-       01  MOD-ZCL07745              PIC X(8) VALUE 'ZCL07745'.
-       01  MOD-ZUW08180              PIC X(8) VALUE 'ZUW08180'.
-       01  MOD-ZUW07260              PIC X(8) VALUE 'ZUW07260'.
-       01  MOD-ZHO07222              PIC X(8) VALUE 'ZHO07222'.
-       01  MOD-ZBI08186              PIC X(8) VALUE 'ZBI08186'.
-       01  MOD-ZHO06692              PIC X(8) VALUE 'ZHO06692'.
-       01  MOD-ZBI07296              PIC X(8) VALUE 'ZBI07296'.
-       01  MOD-ZCL08415              PIC X(8) VALUE 'ZCL08415'.
-       01  MOD-ZBI06836              PIC X(8) VALUE 'ZBI06836'.
-       01  MOD-ZRE08487              PIC X(8) VALUE 'ZRE08487'.
-       01  MOD-ZCU06644              PIC X(8) VALUE 'ZCU06644'.
-       01  MOD-ZCU07474              PIC X(8) VALUE 'ZCU07474'.
-       01  MOD-ZAG06528              PIC X(8) VALUE 'ZAG06528'.
-       01  MOD-ZUW07110              PIC X(8) VALUE 'ZUW07110'.
-       01  MOD-ZEN08083              PIC X(8) VALUE 'ZEN08083'.
-       01  MOD-ZUW07190              PIC X(8) VALUE 'ZUW07190'.
-       01  MOD-ZBI08436              PIC X(8) VALUE 'ZBI08436'.
-       01  MOD-ZCU06704              PIC X(8) VALUE 'ZCU06704'.
-       01  MOD-ZCU07744              PIC X(8) VALUE 'ZCU07744'.
-       01  MOD-ZMT07481              PIC X(8) VALUE 'ZMT07481'.
-       01  MOD-ZCL08635              PIC X(8) VALUE 'ZCL08635'.
-       01  MOD-ZRE08157              PIC X(8) VALUE 'ZRE08157'.
-       01  MOD-ZUW07850              PIC X(8) VALUE 'ZUW07850'.
-       01  MOD-ZPA06499              PIC X(8) VALUE 'ZPA06499'.
-       01  MOD-ZCL08445              PIC X(8) VALUE 'ZCL08445'.
-       01  MOD-ZEN06483              PIC X(8) VALUE 'ZEN06483'.
-       01  MOD-ZCU08254              PIC X(8) VALUE 'ZCU08254'.
-       01  MOD-ZRE07757              PIC X(8) VALUE 'ZRE07757'.
-       01  MOD-ZEN07033              PIC X(8) VALUE 'ZEN07033'.
-       01  MOD-ZMT06301              PIC X(8) VALUE 'ZMT06301'.
-       01  MOD-ZRE08317              PIC X(8) VALUE 'ZRE08317'.
-       01  MOD-ZHO06342              PIC X(8) VALUE 'ZHO06342'.
-       01  MOD-ZPA08589              PIC X(8) VALUE 'ZPA08589'.
-       01  MOD-ZUW07390              PIC X(8) VALUE 'ZUW07390'.
-       01  MOD-ZPA08669              PIC X(8) VALUE 'ZPA08669'.
-       01  MOD-ZCU07234              PIC X(8) VALUE 'ZCU07234'.
-       01  MOD-ZRE08127              PIC X(8) VALUE 'ZRE08127'.
-       01  MOD-ZEN07433              PIC X(8) VALUE 'ZEN07433'.
-       01  MOD-ZCL07065              PIC X(8) VALUE 'ZCL07065'.
-       01  MOD-ZUW06830              PIC X(8) VALUE 'ZUW06830'.
-       01  MOD-ZRE07437              PIC X(8) VALUE 'ZRE07437'.
-       01  MOD-ZCU07824              PIC X(8) VALUE 'ZCU07824'.
-       01  MOD-ZAG08028              PIC X(8) VALUE 'ZAG08028'.
-       01  MOD-ZAG08078              PIC X(8) VALUE 'ZAG08078'.
-       01  MOD-ZPA07309              PIC X(8) VALUE 'ZPA07309'.
-       01  MOD-ZPA07619              PIC X(8) VALUE 'ZPA07619'.
-       01  MOD-ZPA07569              PIC X(8) VALUE 'ZPA07569'.
-       01  MOD-ZUW07740              PIC X(8) VALUE 'ZUW07740'.
-       01  MOD-ZRE07707              PIC X(8) VALUE 'ZRE07707'.
-       01  MOD-ZCU06734              PIC X(8) VALUE 'ZCU06734'.
-       01  MOD-ZCU06964              PIC X(8) VALUE 'ZCU06964'.
-       01  MOD-ZCL06485              PIC X(8) VALUE 'ZCL06485'.
-       01  MOD-ZCL08385              PIC X(8) VALUE 'ZCL08385'.
-       01  MOD-ZAG08538              PIC X(8) VALUE 'ZAG08538'.
-       01  MOD-ZRE07837              PIC X(8) VALUE 'ZRE07837'.
-       01  MOD-ZUW07120              PIC X(8) VALUE 'ZUW07120'.
-       01  MOD-ZUW08260              PIC X(8) VALUE 'ZUW08260'.
-       01  MOD-ZEN07293              PIC X(8) VALUE 'ZEN07293'.
-       01  MOD-ZMT07961              PIC X(8) VALUE 'ZMT07961'.
-       01  MOD-ZBI07186              PIC X(8) VALUE 'ZBI07186'.
-       01  MOD-ZUW06720              PIC X(8) VALUE 'ZUW06720'.
-       01  MOD-ZEN06733              PIC X(8) VALUE 'ZEN06733'.
-       01  MOD-ZHO07642              PIC X(8) VALUE 'ZHO07642'.
-       01  MOD-ZHO06942              PIC X(8) VALUE 'ZHO06942'.
-       01  MOD-ZMT07971              PIC X(8) VALUE 'ZMT07971'.
-       01  MOD-ZPA08219              PIC X(8) VALUE 'ZPA08219'.
-       01  MOD-ZHO07932              PIC X(8) VALUE 'ZHO07932'.
-       01  MOD-ZEN08333              PIC X(8) VALUE 'ZEN08333'.
-       01  MOD-ZCL07025              PIC X(8) VALUE 'ZCL07025'.
-       01  MOD-ZBI07626              PIC X(8) VALUE 'ZBI07626'.
-       01  MOD-ZRE07087              PIC X(8) VALUE 'ZRE07087'.
-       01  MOD-ZPA08049              PIC X(8) VALUE 'ZPA08049'.
-       01  MOD-ZPA08339              PIC X(8) VALUE 'ZPA08339'.
-       01  MOD-ZUW06410              PIC X(8) VALUE 'ZUW06410'.
-       01  MOD-ZMT07701              PIC X(8) VALUE 'ZMT07701'.
-       01  MOD-ZUW06930              PIC X(8) VALUE 'ZUW06930'.
-       01  MOD-ZPA08369              PIC X(8) VALUE 'ZPA08369'.
-       01  MOD-ZHO08192              PIC X(8) VALUE 'ZHO08192'.
-       01  MOD-ZMT08561              PIC X(8) VALUE 'ZMT08561'.
-       01  MOD-ZAG08688              PIC X(8) VALUE 'ZAG08688'.
-       01  MOD-ZCU07874              PIC X(8) VALUE 'ZCU07874'.
-       01  MOD-ZUW06870              PIC X(8) VALUE 'ZUW06870'.
-       01  MOD-ZRE08047              PIC X(8) VALUE 'ZRE08047'.
-       01  MOD-ZUW08190              PIC X(8) VALUE 'ZUW08190'.
-       01  MOD-ZCU07104              PIC X(8) VALUE 'ZCU07104'.
-       01  MOD-ZCL07295              PIC X(8) VALUE 'ZCL07295'.
-       01  MOD-ZUW06590              PIC X(8) VALUE 'ZUW06590'.
-       01  MOD-ZEN08193              PIC X(8) VALUE 'ZEN08193'.
-       01  MOD-ZCU07804              PIC X(8) VALUE 'ZCU07804'.
-       01  MOD-ZCU07024              PIC X(8) VALUE 'ZCU07024'.
-       01  MOD-ZUW08230              PIC X(8) VALUE 'ZUW08230'.
-       01  MOD-ZHO06842              PIC X(8) VALUE 'ZHO06842'.
-       01  MOD-ZMT07681              PIC X(8) VALUE 'ZMT07681'.
-       01  MOD-ZCU08364              PIC X(8) VALUE 'ZCU08364'.
-       01  MOD-ZRE08517              PIC X(8) VALUE 'ZRE08517'.
-       01  MOD-ZUW08120              PIC X(8) VALUE 'ZUW08120'.
-       01  MOD-ZMT08511              PIC X(8) VALUE 'ZMT08511'.
-       01  MOD-ZMT07331              PIC X(8) VALUE 'ZMT07331'.
-       01  MOD-ZEN06943              PIC X(8) VALUE 'ZEN06943'.
-       01  MOD-ZPA07629              PIC X(8) VALUE 'ZPA07629'.
-       01  MOD-ZBI08006              PIC X(8) VALUE 'ZBI08006'.
-       01  MOD-ZCU08654              PIC X(8) VALUE 'ZCU08654'.
-       01  MOD-ZCU07284              PIC X(8) VALUE 'ZCU07284'.
-       01  MOD-ZRE06967              PIC X(8) VALUE 'ZRE06967'.
-       01  MOD-ZRE07217              PIC X(8) VALUE 'ZRE07217'.
-       01  MOD-ZBI08266              PIC X(8) VALUE 'ZBI08266'.
-       01  MOD-ZUW06400              PIC X(8) VALUE 'ZUW06400'.
-       01  MOD-ZHO08182              PIC X(8) VALUE 'ZHO08182'.
+       01  MOD-ZCL07143              PIC X(8) VALUE 'ZCL07143'.
+       01  MOD-ZHO07793              PIC X(8) VALUE 'ZHO07793'.
+       01  MOD-ZCL08408              PIC X(8) VALUE 'ZCL08408'.
+       01  MOD-ZEN07686              PIC X(8) VALUE 'ZEN07686'.
+       01  MOD-ZEN06500              PIC X(8) VALUE 'ZEN06500'.
+       01  MOD-ZPA08384              PIC X(8) VALUE 'ZPA08384'.
+       01  MOD-ZEN06607              PIC X(8) VALUE 'ZEN06607'.
+       01  MOD-ZAG07168              PIC X(8) VALUE 'ZAG07168'.
+       01  MOD-ZMT07824              PIC X(8) VALUE 'ZMT07824'.
+       01  MOD-ZMT07111              PIC X(8) VALUE 'ZMT07111'.
+       01  MOD-ZCU08280              PIC X(8) VALUE 'ZCU08280'.
+       01  MOD-ZAG06757              PIC X(8) VALUE 'ZAG06757'.
+       01  MOD-ZCL08523              PIC X(8) VALUE 'ZCL08523'.
+       01  MOD-ZMT07066              PIC X(8) VALUE 'ZMT07066'.
+       01  MOD-ZAG06788              PIC X(8) VALUE 'ZAG06788'.
+       01  MOD-ZMT07830              PIC X(8) VALUE 'ZMT07830'.
+       01  MOD-ZCU06442              PIC X(8) VALUE 'ZCU06442'.
+       01  MOD-ZPA08168              PIC X(8) VALUE 'ZPA08168'.
+       01  MOD-ZCL08049              PIC X(8) VALUE 'ZCL08049'.
+       01  MOD-ZCU07016              PIC X(8) VALUE 'ZCU07016'.
+       01  MOD-ZMT08673              PIC X(8) VALUE 'ZMT08673'.
+       01  MOD-ZHO07500              PIC X(8) VALUE 'ZHO07500'.
+       01  MOD-ZUW08086              PIC X(8) VALUE 'ZUW08086'.
+       01  MOD-ZEN07842              PIC X(8) VALUE 'ZEN07842'.
+       01  MOD-ZRE07384              PIC X(8) VALUE 'ZRE07384'.
+       01  MOD-ZEN07174              PIC X(8) VALUE 'ZEN07174'.
+       01  MOD-ZRE07684              PIC X(8) VALUE 'ZRE07684'.
+       01  MOD-ZHO06629              PIC X(8) VALUE 'ZHO06629'.
+       01  MOD-ZAG07497              PIC X(8) VALUE 'ZAG07497'.
+       01  MOD-ZMT06933              PIC X(8) VALUE 'ZMT06933'.
+       01  MOD-ZCU07502              PIC X(8) VALUE 'ZCU07502'.
+       01  MOD-ZMT06597              PIC X(8) VALUE 'ZMT06597'.
+       01  MOD-ZCL07402              PIC X(8) VALUE 'ZCL07402'.
+       01  MOD-ZAG06355              PIC X(8) VALUE 'ZAG06355'.
+       01  MOD-ZMT08664              PIC X(8) VALUE 'ZMT08664'.
        01  MOD-ZMT08421              PIC X(8) VALUE 'ZMT08421'.
-       01  MOD-ZUW06450              PIC X(8) VALUE 'ZUW06450'.
-       01  MOD-ZAG07248              PIC X(8) VALUE 'ZAG07248'.
-       01  MOD-ZAG07318              PIC X(8) VALUE 'ZAG07318'.
-       01  MOD-ZCL07195              PIC X(8) VALUE 'ZCL07195'.
-       01  MOD-ZBI07326              PIC X(8) VALUE 'ZBI07326'.
-       01  MOD-ZMT07081              PIC X(8) VALUE 'ZMT07081'.
-       01  MOD-ZAG07118              PIC X(8) VALUE 'ZAG07118'.
-       01  MOD-ZHO07152              PIC X(8) VALUE 'ZHO07152'.
-       01  MOD-ZAG08178              PIC X(8) VALUE 'ZAG08178'.
-       01  MOD-ZCL07115              PIC X(8) VALUE 'ZCL07115'.
-       01  MOD-ZCU08154              PIC X(8) VALUE 'ZCU08154'.
-       01  MOD-ZCU07924              PIC X(8) VALUE 'ZCU07924'.
-       01  MOD-ZAG06798              PIC X(8) VALUE 'ZAG06798'.
-       01  MOD-ZRE06427              PIC X(8) VALUE 'ZRE06427'.
-       01  MOD-ZBI07216              PIC X(8) VALUE 'ZBI07216'.
-       01  MOD-ZAG06598              PIC X(8) VALUE 'ZAG06598'.
-       01  MOD-ZHO07692              PIC X(8) VALUE 'ZHO07692'.
-       01  MOD-ZAG08578              PIC X(8) VALUE 'ZAG08578'.
-       01  MOD-ZCU07894              PIC X(8) VALUE 'ZCU07894'.
-       01  MOD-ZAG06508              PIC X(8) VALUE 'ZAG06508'.
-       01  MOD-ZAG07368              PIC X(8) VALUE 'ZAG07368'.
-       01  MOD-ZMT07541              PIC X(8) VALUE 'ZMT07541'.
-       01  MOD-ZEN08603              PIC X(8) VALUE 'ZEN08603'.
-       01  MOD-ZMT07951              PIC X(8) VALUE 'ZMT07951'.
-       01  MOD-ZHO07142              PIC X(8) VALUE 'ZHO07142'.
-       01  MOD-ZBI07006              PIC X(8) VALUE 'ZBI07006'.
-       01  MOD-ZBI06676              PIC X(8) VALUE 'ZBI06676'.
-       01  MOD-ZEN06503              PIC X(8) VALUE 'ZEN06503'.
-       01  MOD-ZHO06812              PIC X(8) VALUE 'ZHO06812'.
-       01  MOD-ZHO07812              PIC X(8) VALUE 'ZHO07812'.
-       01  MOD-ZCL08095              PIC X(8) VALUE 'ZCL08095'.
-       01  MOD-ZHO08302              PIC X(8) VALUE 'ZHO08302'.
-       01  MOD-ZRE06927              PIC X(8) VALUE 'ZRE06927'.
+       01  MOD-ZCL07040              PIC X(8) VALUE 'ZCL07040'.
+       01  MOD-ZMT07217              PIC X(8) VALUE 'ZMT07217'.
+       01  MOD-ZMT07215              PIC X(8) VALUE 'ZMT07215'.
+       01  MOD-ZMT07668              PIC X(8) VALUE 'ZMT07668'.
+       01  MOD-ZRE08374              PIC X(8) VALUE 'ZRE08374'.
+       01  MOD-ZHO08370              PIC X(8) VALUE 'ZHO08370'.
+       01  MOD-ZAG07639              PIC X(8) VALUE 'ZAG07639'.
+       01  MOD-ZMT08413              PIC X(8) VALUE 'ZMT08413'.
+       01  MOD-ZEN07608              PIC X(8) VALUE 'ZEN07608'.
+       01  MOD-ZRE08154              PIC X(8) VALUE 'ZRE08154'.
+       01  MOD-ZBI08639              PIC X(8) VALUE 'ZBI08639'.
+       01  MOD-ZMT06466              PIC X(8) VALUE 'ZMT06466'.
+       01  MOD-ZMT08332              PIC X(8) VALUE 'ZMT08332'.
+       01  MOD-ZHO07584              PIC X(8) VALUE 'ZHO07584'.
+       01  MOD-ZHO07851              PIC X(8) VALUE 'ZHO07851'.
+       01  MOD-ZMT07832              PIC X(8) VALUE 'ZMT07832'.
+       01  MOD-ZAG07195              PIC X(8) VALUE 'ZAG07195'.
+       01  MOD-ZMT07110              PIC X(8) VALUE 'ZMT07110'.
+       01  MOD-ZPA06685              PIC X(8) VALUE 'ZPA06685'.
+       01  MOD-ZHO06579              PIC X(8) VALUE 'ZHO06579'.
+       01  MOD-ZEN06977              PIC X(8) VALUE 'ZEN06977'.
+       01  MOD-ZHO06767              PIC X(8) VALUE 'ZHO06767'.
+       01  MOD-ZEN07498              PIC X(8) VALUE 'ZEN07498'.
+       01  MOD-ZCU08649              PIC X(8) VALUE 'ZCU08649'.
+       01  MOD-ZCU08113              PIC X(8) VALUE 'ZCU08113'.
+       01  MOD-ZCL07238              PIC X(8) VALUE 'ZCL07238'.
+       01  MOD-ZPA07296              PIC X(8) VALUE 'ZPA07296'.
+       01  MOD-ZEN08561              PIC X(8) VALUE 'ZEN08561'.
+       01  MOD-ZRE08143              PIC X(8) VALUE 'ZRE08143'.
+       01  MOD-ZMT06663              PIC X(8) VALUE 'ZMT06663'.
+       01  MOD-ZCU08252              PIC X(8) VALUE 'ZCU08252'.
+       01  MOD-ZMT07015              PIC X(8) VALUE 'ZMT07015'.
+       01  MOD-ZMT07475              PIC X(8) VALUE 'ZMT07475'.
+       01  MOD-ZHO07604              PIC X(8) VALUE 'ZHO07604'.
+       01  MOD-ZMT08378              PIC X(8) VALUE 'ZMT08378'.
+       01  MOD-ZBI07889              PIC X(8) VALUE 'ZBI07889'.
+       01  MOD-ZHO07624              PIC X(8) VALUE 'ZHO07624'.
+       01  MOD-ZMT06337              PIC X(8) VALUE 'ZMT06337'.
+       01  MOD-ZHO08090              PIC X(8) VALUE 'ZHO08090'.
+       01  MOD-ZHO06839              PIC X(8) VALUE 'ZHO06839'.
+       01  MOD-ZAG07478              PIC X(8) VALUE 'ZAG07478'.
+       01  MOD-ZMT08319              PIC X(8) VALUE 'ZMT08319'.
+       01  MOD-ZRE06614              PIC X(8) VALUE 'ZRE06614'.
+       01  MOD-ZAG08619              PIC X(8) VALUE 'ZAG08619'.
+       01  MOD-ZBI08129              PIC X(8) VALUE 'ZBI08129'.
+       01  MOD-ZEN06361              PIC X(8) VALUE 'ZEN06361'.
+       01  MOD-ZEN08211              PIC X(8) VALUE 'ZEN08211'.
+       01  MOD-ZHO06799              PIC X(8) VALUE 'ZHO06799'.
+       01  MOD-ZMT07107              PIC X(8) VALUE 'ZMT07107'.
+       01  MOD-ZHO07600              PIC X(8) VALUE 'ZHO07600'.
+       01  MOD-ZMT07138              PIC X(8) VALUE 'ZMT07138'.
+       01  MOD-ZCU08592              PIC X(8) VALUE 'ZCU08592'.
+       01  MOD-ZAG07205              PIC X(8) VALUE 'ZAG07205'.
+       01  MOD-ZMT07645              PIC X(8) VALUE 'ZMT07645'.
+       01  MOD-ZRE08388              PIC X(8) VALUE 'ZRE08388'.
+       01  MOD-ZEN06923              PIC X(8) VALUE 'ZEN06923'.
+       01  MOD-ZUW08235              PIC X(8) VALUE 'ZUW08235'.
+       01  MOD-ZPA08181              PIC X(8) VALUE 'ZPA08181'.
+       01  MOD-ZMT06686              PIC X(8) VALUE 'ZMT06686'.
+       01  MOD-ZHO06803              PIC X(8) VALUE 'ZHO06803'.
+       01  MOD-ZMT08333              PIC X(8) VALUE 'ZMT08333'.
+       01  MOD-ZRE07719              PIC X(8) VALUE 'ZRE07719'.
+       01  MOD-ZMT07910              PIC X(8) VALUE 'ZMT07910'.
+       01  MOD-ZHO06474              PIC X(8) VALUE 'ZHO06474'.
+       01  MOD-ZCL08029              PIC X(8) VALUE 'ZCL08029'.
+       01  MOD-ZPA06431              PIC X(8) VALUE 'ZPA06431'.
+       01  MOD-ZEN07303              PIC X(8) VALUE 'ZEN07303'.
+       01  MOD-ZAG07054              PIC X(8) VALUE 'ZAG07054'.
+       01  MOD-ZEN06672              PIC X(8) VALUE 'ZEN06672'.
+       01  MOD-ZCU08436              PIC X(8) VALUE 'ZCU08436'.
+       01  MOD-ZEN08433              PIC X(8) VALUE 'ZEN08433'.
+       01  MOD-ZAG07503              PIC X(8) VALUE 'ZAG07503'.
+       01  MOD-ZCL06305              PIC X(8) VALUE 'ZCL06305'.
+       01  MOD-ZUW07024              PIC X(8) VALUE 'ZUW07024'.
+       01  MOD-ZMT07331              PIC X(8) VALUE 'ZMT07331'.
+       01  MOD-ZMT08382              PIC X(8) VALUE 'ZMT08382'.
+       01  MOD-ZHO08027              PIC X(8) VALUE 'ZHO08027'.
+       01  MOD-ZCL06419              PIC X(8) VALUE 'ZCL06419'.
+       01  MOD-ZMT07789              PIC X(8) VALUE 'ZMT07789'.
+       01  MOD-ZEN08288              PIC X(8) VALUE 'ZEN08288'.
+       01  MOD-ZCU07529              PIC X(8) VALUE 'ZCU07529'.
+       01  MOD-ZMT07710              PIC X(8) VALUE 'ZMT07710'.
+       01  MOD-ZCU08266              PIC X(8) VALUE 'ZCU08266'.
+       01  MOD-ZAG07146              PIC X(8) VALUE 'ZAG07146'.
+       01  MOD-ZMT08596              PIC X(8) VALUE 'ZMT08596'.
+       01  MOD-ZEN07353              PIC X(8) VALUE 'ZEN07353'.
+       01  MOD-ZMT07543              PIC X(8) VALUE 'ZMT07543'.
+       01  MOD-ZMT07729              PIC X(8) VALUE 'ZMT07729'.
+       01  MOD-ZBI08627              PIC X(8) VALUE 'ZBI08627'.
+       01  MOD-ZEN07198              PIC X(8) VALUE 'ZEN07198'.
+       01  MOD-ZUW06815              PIC X(8) VALUE 'ZUW06815'.
+       01  MOD-ZEN07393              PIC X(8) VALUE 'ZEN07393'.
+       01  MOD-ZEN06609              PIC X(8) VALUE 'ZEN06609'.
+       01  MOD-ZMT06631              PIC X(8) VALUE 'ZMT06631'.
+       01  MOD-ZPA07192              PIC X(8) VALUE 'ZPA07192'.
+       01  MOD-ZCL08656              PIC X(8) VALUE 'ZCL08656'.
+       01  MOD-ZUW06591              PIC X(8) VALUE 'ZUW06591'.
+       01  MOD-ZCL07492              PIC X(8) VALUE 'ZCL07492'.
+       01  MOD-ZMT07985              PIC X(8) VALUE 'ZMT07985'.
+       01  MOD-ZEN08447              PIC X(8) VALUE 'ZEN08447'.
+       01  MOD-ZUW06315              PIC X(8) VALUE 'ZUW06315'.
+       01  MOD-ZPA07035              PIC X(8) VALUE 'ZPA07035'.
        01  MOD-ZCL07955              PIC X(8) VALUE 'ZCL07955'.
-       01  MOD-ZMT07511              PIC X(8) VALUE 'ZMT07511'.
-       01  MOD-ZCU07074              PIC X(8) VALUE 'ZCU07074'.
-       01  MOD-ZCL07275              PIC X(8) VALUE 'ZCL07275'.
-       01  MOD-ZMT07551              PIC X(8) VALUE 'ZMT07551'.
-       01  MOD-ZMT07231              PIC X(8) VALUE 'ZMT07231'.
-       01  MOD-ZCU06854              PIC X(8) VALUE 'ZCU06854'.
-       01  MOD-ZMT06591              PIC X(8) VALUE 'ZMT06591'.
-       01  MOD-ZUW07070              PIC X(8) VALUE 'ZUW07070'.
-       01  MOD-ZUW08320              PIC X(8) VALUE 'ZUW08320'.
-       01  MOD-ZEN06523              PIC X(8) VALUE 'ZEN06523'.
-       01  MOD-ZEN07243              PIC X(8) VALUE 'ZEN07243'.
-       01  MOD-ZRE08337              PIC X(8) VALUE 'ZRE08337'.
-       01  MOD-ZMT07991              PIC X(8) VALUE 'ZMT07991'.
-       01  MOD-ZAG06948              PIC X(8) VALUE 'ZAG06948'.
-       01  MOD-ZBI08566              PIC X(8) VALUE 'ZBI08566'.
-       01  MOD-ZEN06543              PIC X(8) VALUE 'ZEN06543'.
-       01  MOD-ZCU08314              PIC X(8) VALUE 'ZCU08314'.
-       01  MOD-ZAG07308              PIC X(8) VALUE 'ZAG07308'.
-       01  MOD-ZUW07400              PIC X(8) VALUE 'ZUW07400'.
-       01  MOD-ZPA08529              PIC X(8) VALUE 'ZPA08529'.
-       01  MOD-ZAG08448              PIC X(8) VALUE 'ZAG08448'.
-       01  MOD-ZAG06368              PIC X(8) VALUE 'ZAG06368'.
-       01  MOD-ZCU07344              PIC X(8) VALUE 'ZCU07344'.
-       01  MOD-ZMT08491              PIC X(8) VALUE 'ZMT08491'.
-       01  MOD-ZBI07076              PIC X(8) VALUE 'ZBI07076'.
-       01  MOD-ZAG07538              PIC X(8) VALUE 'ZAG07538'.
-       01  MOD-ZCL07505              PIC X(8) VALUE 'ZCL07505'.
-       01  MOD-ZAG06748              PIC X(8) VALUE 'ZAG06748'.
-       01  MOD-ZRE08417              PIC X(8) VALUE 'ZRE08417'.
-       01  MOD-ZRE07157              PIC X(8) VALUE 'ZRE07157'.
-       01  MOD-ZPA07379              PIC X(8) VALUE 'ZPA07379'.
-       01  MOD-ZMT06791              PIC X(8) VALUE 'ZMT06791'.
-       01  MOD-ZBI06416              PIC X(8) VALUE 'ZBI06416'.
-       01  MOD-ZAG07178              PIC X(8) VALUE 'ZAG07178'.
-       01  MOD-ZRE08197              PIC X(8) VALUE 'ZRE08197'.
-       01  MOD-ZCL07365              PIC X(8) VALUE 'ZCL07365'.
-       01  MOD-ZMT06511              PIC X(8) VALUE 'ZMT06511'.
-       01  MOD-ZCL07135              PIC X(8) VALUE 'ZCL07135'.
-       01  MOD-ZCL06715              PIC X(8) VALUE 'ZCL06715'.
-       01  MOD-ZAG07518              PIC X(8) VALUE 'ZAG07518'.
-       01  MOD-ZUW07310              PIC X(8) VALUE 'ZUW07310'.
-       01  MOD-ZPA06679              PIC X(8) VALUE 'ZPA06679'.
-       01  MOD-ZCL07535              PIC X(8) VALUE 'ZCL07535'.
-       01  MOD-ZRE06597              PIC X(8) VALUE 'ZRE06597'.
-       01  MOD-ZMT06761              PIC X(8) VALUE 'ZMT06761'.
-       01  MOD-ZEN08653              PIC X(8) VALUE 'ZEN08653'.
-       01  MOD-ZMT06661              PIC X(8) VALUE 'ZMT06661'.
-       01  MOD-ZCL06775              PIC X(8) VALUE 'ZCL06775'.
-       01  MOD-ZBI07506              PIC X(8) VALUE 'ZBI07506'.
-       01  MOD-ZEN08413              PIC X(8) VALUE 'ZEN08413'.
-       01  MOD-ZEN06553              PIC X(8) VALUE 'ZEN06553'.
-       01  MOD-ZRE07597              PIC X(8) VALUE 'ZRE07597'.
-       01  MOD-ZRE07807              PIC X(8) VALUE 'ZRE07807'.
-       01  MOD-ZBI07956              PIC X(8) VALUE 'ZBI07956'.
-       01  MOD-ZPA07199              PIC X(8) VALUE 'ZPA07199'.
-       01  MOD-ZHO06802              PIC X(8) VALUE 'ZHO06802'.
-       01  MOD-ZBI06356              PIC X(8) VALUE 'ZBI06356'.
-       01  MOD-ZBI07906              PIC X(8) VALUE 'ZBI07906'.
+       01  MOD-ZPA07417              PIC X(8) VALUE 'ZPA07417'.
+       01  MOD-ZMT06360              PIC X(8) VALUE 'ZMT06360'.
+       01  MOD-ZBI06482              PIC X(8) VALUE 'ZBI06482'.
+       01  MOD-ZCL07329              PIC X(8) VALUE 'ZCL07329'.
+       01  MOD-ZHO07550              PIC X(8) VALUE 'ZHO07550'.
+       01  MOD-ZHO07142              PIC X(8) VALUE 'ZHO07142'.
+       01  MOD-ZMT06324              PIC X(8) VALUE 'ZMT06324'.
+       01  MOD-ZUW06715              PIC X(8) VALUE 'ZUW06715'.
+       01  MOD-ZPA06746              PIC X(8) VALUE 'ZPA06746'.
+       01  MOD-ZEN07880              PIC X(8) VALUE 'ZEN07880'.
+       01  MOD-ZEN07927              PIC X(8) VALUE 'ZEN07927'.
+       01  MOD-ZMT07919              PIC X(8) VALUE 'ZMT07919'.
+       01  MOD-ZPA07431              PIC X(8) VALUE 'ZPA07431'.
+       01  MOD-ZCL08308              PIC X(8) VALUE 'ZCL08308'.
+       01  MOD-ZMT07102              PIC X(8) VALUE 'ZMT07102'.
+       01  MOD-ZMT08078              PIC X(8) VALUE 'ZMT08078'.
+       01  MOD-ZCL08162              PIC X(8) VALUE 'ZCL08162'.
+       01  MOD-ZMT06824              PIC X(8) VALUE 'ZMT06824'.
+       01  MOD-ZHO08482              PIC X(8) VALUE 'ZHO08482'.
+       01  MOD-ZPA08216              PIC X(8) VALUE 'ZPA08216'.
+       01  MOD-ZCL07005              PIC X(8) VALUE 'ZCL07005'.
+       01  MOD-ZPA06363              PIC X(8) VALUE 'ZPA06363'.
+       01  MOD-ZCU06700              PIC X(8) VALUE 'ZCU06700'.
+       01  MOD-ZHO06574              PIC X(8) VALUE 'ZHO06574'.
+       01  MOD-ZBI07183              PIC X(8) VALUE 'ZBI07183'.
+       01  MOD-ZRE06463              PIC X(8) VALUE 'ZRE06463'.
+       01  MOD-ZPA07214              PIC X(8) VALUE 'ZPA07214'.
+       01  MOD-ZUW08465              PIC X(8) VALUE 'ZUW08465'.
+       01  MOD-ZCU07409              PIC X(8) VALUE 'ZCU07409'.
+       01  MOD-ZRE06340              PIC X(8) VALUE 'ZRE06340'.
+       01  MOD-ZAG07650              PIC X(8) VALUE 'ZAG07650'.
+       01  MOD-ZRE07892              PIC X(8) VALUE 'ZRE07892'.
+       01  MOD-ZUW07936              PIC X(8) VALUE 'ZUW07936'.
+       01  MOD-ZCL08204              PIC X(8) VALUE 'ZCL08204'.
+       01  MOD-ZCU08110              PIC X(8) VALUE 'ZCU08110'.
+       01  MOD-ZBI06733              PIC X(8) VALUE 'ZBI06733'.
+       01  MOD-ZHO06505              PIC X(8) VALUE 'ZHO06505'.
+       01  MOD-ZBI06791              PIC X(8) VALUE 'ZBI06791'.
+       01  MOD-ZPA07872              PIC X(8) VALUE 'ZPA07872'.
+       01  MOD-ZMT07477              PIC X(8) VALUE 'ZMT07477'.
+       01  MOD-ZAG08242              PIC X(8) VALUE 'ZAG08242'.
+       01  MOD-ZRE06872              PIC X(8) VALUE 'ZRE06872'.
+       01  MOD-ZCL08456              PIC X(8) VALUE 'ZCL08456'.
+       01  MOD-ZBI08590              PIC X(8) VALUE 'ZBI08590'.
+       01  MOD-ZMT06325              PIC X(8) VALUE 'ZMT06325'.
+       01  MOD-ZHO07969              PIC X(8) VALUE 'ZHO07969'.
+       01  MOD-ZUW08287              PIC X(8) VALUE 'ZUW08287'.
+       01  MOD-ZMT07765              PIC X(8) VALUE 'ZMT07765'.
+       01  MOD-ZPA08657              PIC X(8) VALUE 'ZPA08657'.
+       01  MOD-ZBI06966              PIC X(8) VALUE 'ZBI06966'.
+       01  MOD-ZHO07565              PIC X(8) VALUE 'ZHO07565'.
+       01  MOD-ZHO06867              PIC X(8) VALUE 'ZHO06867'.
+       01  MOD-ZHO07316              PIC X(8) VALUE 'ZHO07316'.
+       01  MOD-ZEN06384              PIC X(8) VALUE 'ZEN06384'.
+       01  MOD-ZCU08138              PIC X(8) VALUE 'ZCU08138'.
+       01  MOD-ZMT06422              PIC X(8) VALUE 'ZMT06422'.
+       01  MOD-ZMT07632              PIC X(8) VALUE 'ZMT07632'.
+       01  MOD-ZEN06427              PIC X(8) VALUE 'ZEN06427'.
+       01  MOD-ZMT08080              PIC X(8) VALUE 'ZMT08080'.
+       01  MOD-ZAG07365              PIC X(8) VALUE 'ZAG07365'.
+       01  MOD-ZHO07799              PIC X(8) VALUE 'ZHO07799'.
+       01  MOD-ZHO07021              PIC X(8) VALUE 'ZHO07021'.
+       01  MOD-ZMT08560              PIC X(8) VALUE 'ZMT08560'.
+       01  MOD-ZCL08461              PIC X(8) VALUE 'ZCL08461'.
+       01  MOD-ZCU07944              PIC X(8) VALUE 'ZCU07944'.
+       01  MOD-ZMT08368              PIC X(8) VALUE 'ZMT08368'.
+       01  MOD-ZEN07392              PIC X(8) VALUE 'ZEN07392'.
+       01  MOD-ZHO07852              PIC X(8) VALUE 'ZHO07852'.
+       01  MOD-ZEN07452              PIC X(8) VALUE 'ZEN07452'.
+       01  MOD-ZRE07236              PIC X(8) VALUE 'ZRE07236'.
+       01  MOD-ZCU06350              PIC X(8) VALUE 'ZCU06350'.
+       01  MOD-ZMT08112              PIC X(8) VALUE 'ZMT08112'.
+       01  MOD-ZRE07184              PIC X(8) VALUE 'ZRE07184'.
+       01  MOD-ZEN07078              PIC X(8) VALUE 'ZEN07078'.
+       01  MOD-ZBI07089              PIC X(8) VALUE 'ZBI07089'.
+       01  MOD-ZMT07998              PIC X(8) VALUE 'ZMT07998'.
+       01  MOD-ZPA07361              PIC X(8) VALUE 'ZPA07361'.
+       01  MOD-ZHO06810              PIC X(8) VALUE 'ZHO06810'.
+       01  MOD-ZCL07678              PIC X(8) VALUE 'ZCL07678'.
+       01  MOD-ZMT06552              PIC X(8) VALUE 'ZMT06552'.
+       01  MOD-ZEN07189              PIC X(8) VALUE 'ZEN07189'.
+       01  MOD-ZRE07707              PIC X(8) VALUE 'ZRE07707'.
+       01  MOD-ZCL07376              PIC X(8) VALUE 'ZCL07376'.
+       01  MOD-ZCU07583              PIC X(8) VALUE 'ZCU07583'.
+       01  MOD-ZAG07324              PIC X(8) VALUE 'ZAG07324'.
+       01  MOD-ZPA07962              PIC X(8) VALUE 'ZPA07962'.
+       01  MOD-ZEN06624              PIC X(8) VALUE 'ZEN06624'.
+       01  MOD-ZEN07096              PIC X(8) VALUE 'ZEN07096'.
+       01  MOD-ZBI07911              PIC X(8) VALUE 'ZBI07911'.
+       01  MOD-ZAG06462              PIC X(8) VALUE 'ZAG06462'.
+       01  MOD-ZAG07349              PIC X(8) VALUE 'ZAG07349'.
+       01  MOD-ZAG07859              PIC X(8) VALUE 'ZAG07859'.
+       01  MOD-ZMT07134              PIC X(8) VALUE 'ZMT07134'.
+       01  MOD-ZBI07491              PIC X(8) VALUE 'ZBI07491'.
+       01  MOD-ZAG07177              PIC X(8) VALUE 'ZAG07177'.
+       01  MOD-ZMT07967              PIC X(8) VALUE 'ZMT07967'.
+       01  MOD-ZMT06892              PIC X(8) VALUE 'ZMT06892'.
+       01  MOD-ZMT06991              PIC X(8) VALUE 'ZMT06991'.
+       01  MOD-ZEN08659              PIC X(8) VALUE 'ZEN08659'.
+       01  MOD-ZRE08346              PIC X(8) VALUE 'ZRE08346'.
+       01  MOD-ZAG06924              PIC X(8) VALUE 'ZAG06924'.
+       01  MOD-ZMT08221              PIC X(8) VALUE 'ZMT08221'.
+       01  MOD-ZEN07938              PIC X(8) VALUE 'ZEN07938'.
+       01  MOD-ZMT08140              PIC X(8) VALUE 'ZMT08140'.
+       01  MOD-ZBI08337              PIC X(8) VALUE 'ZBI08337'.
+       01  MOD-ZMT07559              PIC X(8) VALUE 'ZMT07559'.
+       01  MOD-ZHO06502              PIC X(8) VALUE 'ZHO06502'.
+       01  MOD-ZRE06618              PIC X(8) VALUE 'ZRE06618'.
+       01  MOD-ZHO08046              PIC X(8) VALUE 'ZHO08046'.
+       01  MOD-ZEN06368              PIC X(8) VALUE 'ZEN06368'.
+       01  MOD-ZMT07805              PIC X(8) VALUE 'ZMT07805'.
+       01  MOD-ZCU06611              PIC X(8) VALUE 'ZCU06611'.
+       01  MOD-ZMT06450              PIC X(8) VALUE 'ZMT06450'.
+       01  MOD-ZPA06902              PIC X(8) VALUE 'ZPA06902'.
+       01  MOD-ZBI08524              PIC X(8) VALUE 'ZBI08524'.
+       01  MOD-ZRE06952              PIC X(8) VALUE 'ZRE06952'.
+       01  MOD-ZMT07028              PIC X(8) VALUE 'ZMT07028'.
+       01  MOD-ZBI06644              PIC X(8) VALUE 'ZBI06644'.
+       01  MOD-ZHO08599              PIC X(8) VALUE 'ZHO08599'.
+       01  MOD-ZBI08588              PIC X(8) VALUE 'ZBI08588'.
+       01  MOD-ZMT07644              PIC X(8) VALUE 'ZMT07644'.
+       01  MOD-ZMT08198              PIC X(8) VALUE 'ZMT08198'.
+       01  MOD-ZUW06904              PIC X(8) VALUE 'ZUW06904'.
+       01  MOD-ZEN08666              PIC X(8) VALUE 'ZEN08666'.
+       01  MOD-ZHO07318              PIC X(8) VALUE 'ZHO07318'.
+       01  MOD-ZCL06779              PIC X(8) VALUE 'ZCL06779'.
+       01  MOD-ZMT07094              PIC X(8) VALUE 'ZMT07094'.
+       01  MOD-ZBI06775              PIC X(8) VALUE 'ZBI06775'.
+       01  MOD-ZMT08554              PIC X(8) VALUE 'ZMT08554'.
+       01  MOD-ZCU07311              PIC X(8) VALUE 'ZCU07311'.
+       01  MOD-ZUW08501              PIC X(8) VALUE 'ZUW08501'.
+       01  MOD-ZCU07760              PIC X(8) VALUE 'ZCU07760'.
+       01  MOD-ZHO08670              PIC X(8) VALUE 'ZHO08670'.
+       01  MOD-ZUW08692              PIC X(8) VALUE 'ZUW08692'.
+       01  MOD-ZUW07230              PIC X(8) VALUE 'ZUW07230'.
+       01  MOD-ZEN08480              PIC X(8) VALUE 'ZEN08480'.
+       01  MOD-ZRE07007              PIC X(8) VALUE 'ZRE07007'.
+       01  MOD-ZPA08549              PIC X(8) VALUE 'ZPA08549'.
+       01  MOD-ZEN08353              PIC X(8) VALUE 'ZEN08353'.
+       01  MOD-ZBI07085              PIC X(8) VALUE 'ZBI07085'.
+       01  MOD-ZCU07126              PIC X(8) VALUE 'ZCU07126'.
+       01  MOD-ZEN07588              PIC X(8) VALUE 'ZEN07588'.
+       01  MOD-ZCU07897              PIC X(8) VALUE 'ZCU07897'.
+       01  MOD-ZBI07509              PIC X(8) VALUE 'ZBI07509'.
+       01  MOD-ZPA08347              PIC X(8) VALUE 'ZPA08347'.
+       01  MOD-ZMT08587              PIC X(8) VALUE 'ZMT08587'.
+       01  MOD-ZAG07255              PIC X(8) VALUE 'ZAG07255'.
+       01  MOD-ZCU07291              PIC X(8) VALUE 'ZCU07291'.
+       01  MOD-ZEN06963              PIC X(8) VALUE 'ZEN06963'.
+       01  MOD-ZEN08693              PIC X(8) VALUE 'ZEN08693'.
+       01  MOD-ZMT08442              PIC X(8) VALUE 'ZMT08442'.
+       01  MOD-ZRE06517              PIC X(8) VALUE 'ZRE06517'.
+       01  MOD-ZCU07000              PIC X(8) VALUE 'ZCU07000'.
+       01  MOD-ZCL06907              PIC X(8) VALUE 'ZCL06907'.
+       01  MOD-ZHO06605              PIC X(8) VALUE 'ZHO06605'.
+       01  MOD-ZRE06390              PIC X(8) VALUE 'ZRE06390'.
+       01  MOD-ZMT07959              PIC X(8) VALUE 'ZMT07959'.
+       01  MOD-ZMT07394              PIC X(8) VALUE 'ZMT07394'.
+       01  MOD-ZHO07788              PIC X(8) VALUE 'ZHO07788'.
+       01  MOD-ZPA07290              PIC X(8) VALUE 'ZPA07290'.
+       01  MOD-ZHO06402              PIC X(8) VALUE 'ZHO06402'.
 
       ******************************************************************
       * L I N K A G E     S E C T I O N                                *
@@ -384,1946 +384,570 @@
                IF EIBCALEN IS EQUAL TO ZERO
                   MOVE ' NO COMMAREA RECEIVED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
-                  EXEC CICS ABEND ABCODE('LGCA')
+                  EXEC CICS ABEND ABCODE('LGVS')
                             NODUMP END-EXEC
                END-IF.
                MOVE EIBCALEN TO WS-CALEN.
                SET WS-ADDR-COMMAREA TO ADDRESS OF DFHCOMMAREA.
-               PERFORM CALL-ZRE06517-001.
-               PERFORM CALL-ZMT08551-002.
-               PERFORM CALL-ZPA07759-003.
-               PERFORM CALL-ZMT08371-004.
-               PERFORM CALL-ZHO07042-005.
-               PERFORM CALL-ZCL07815-006.
-               PERFORM CALL-ZHO07702-007.
-               PERFORM CALL-ZUW08400-008.
-               PERFORM CALL-ZCU06824-009.
-               PERFORM CALL-ZMT07741-010.
-               PERFORM CALL-ZBI06606-011.
-               PERFORM CALL-ZEN06353-012.
-               PERFORM CALL-ZEN06433-013.
-               PERFORM CALL-ZAG07688-014.
-               PERFORM CALL-ZCU08034-015.
-               PERFORM CALL-ZCL07925-018.
-               PERFORM CALL-ZAG06678-019.
-               PERFORM CALL-ZBI06546-020.
-               PERFORM CALL-ZBI06826-021.
-               PERFORM CALL-ZEN07073-025.
-               PERFORM CALL-ZHO06552-026.
-               PERFORM CALL-ZCU07254-027.
-               PERFORM CALL-ZUW06600-028.
-               PERFORM CALL-ZUW07430-029.
-               PERFORM CALL-ZBI06616-030.
-               PERFORM CALL-ZAG07768-031.
-               PERFORM CALL-ZCL08495-033.
-               PERFORM CALL-ZAG08458-034.
-               PERFORM CALL-ZPA06349-035.
-               PERFORM CALL-ZMT06411-036.
-               PERFORM CALL-ZAG06468-037.
-               PERFORM CALL-ZRE07317-038.
-               PERFORM CALL-ZUW06360-039.
-               PERFORM CALL-ZMT08471-040.
-               PERFORM CALL-ZCU08594-041.
-               PERFORM CALL-ZBI08226-042.
-               PERFORM CALL-ZHO06372-043.
-               PERFORM CALL-ZMT07881-044.
-               PERFORM CALL-ZAG07058-045.
-               PERFORM CALL-ZBI07396-046.
-               PERFORM CALL-ZBI08216-047.
-               PERFORM CALL-ZCU07424-048.
-               PERFORM CALL-ZUW07220-049.
-               PERFORM CALL-ZCU07884-050.
-               PERFORM CALL-ZEN08033-051.
-               PERFORM CALL-ZMT06821-052.
-               PERFORM CALL-ZPA08549-053.
-               PERFORM CALL-ZUW07780-054.
-               PERFORM CALL-ZBI07416-055.
-               PERFORM CALL-ZAG07928-056.
-               PERFORM CALL-ZMT06471-057.
-               PERFORM CALL-ZEN06793-058.
-               PERFORM CALL-ZHO07992-059.
-               PERFORM CALL-ZMT07141-060.
-               PERFORM CALL-ZAG07748-061.
-               PERFORM CALL-ZRE07387-062.
-               PERFORM CALL-ZEN07403-063.
-               PERFORM CALL-ZUW06520-064.
-               PERFORM CALL-ZAG07498-065.
-               PERFORM CALL-ZAG08548-066.
-               PERFORM CALL-ZEN07423-067.
-               PERFORM CALL-ZEN07053-068.
-               PERFORM CALL-ZRE06777-070.
-               PERFORM CALL-ZAG06898-071.
-               PERFORM CALL-ZRE07227-072.
-               PERFORM CALL-ZEN07273-073.
-               PERFORM CALL-ZCL07885-074.
-               PERFORM CALL-ZPA06979-075.
-               PERFORM CALL-ZEN07003-076.
-               PERFORM CALL-ZCL06655-077.
-               PERFORM CALL-ZRE07417-078.
-               PERFORM CALL-ZPA07969-079.
-               PERFORM CALL-ZEN06653-080.
-               PERFORM CALL-ZRE07567-081.
-               PERFORM CALL-ZUW08200-082.
-               PERFORM CALL-ZCU07204-083.
-               PERFORM CALL-ZEN06463-084.
-               PERFORM CALL-ZHO07092-085.
-               PERFORM CALL-ZCL08225-086.
-               PERFORM CALL-ZHO06592-087.
-               PERFORM CALL-ZUW08220-088.
-               PERFORM CALL-ZCU06304-089.
-               PERFORM CALL-ZEN08313-090.
-               PERFORM CALL-ZEN07613-091.
-               PERFORM CALL-ZBI08176-092.
-               PERFORM CALL-ZRE06757-093.
-               PERFORM CALL-ZAG06958-094.
-               PERFORM CALL-ZCU08134-095.
-               PERFORM CALL-ZRE06497-096.
-               PERFORM CALL-ZHO06972-097.
-               PERFORM CALL-ZHO07022-099.
-               PERFORM CALL-ZCL07745-100.
-               PERFORM CALL-ZUW08180-101.
-               PERFORM CALL-ZUW07260-102.
-               PERFORM CALL-ZHO07222-103.
-               PERFORM CALL-ZBI08186-104.
-               PERFORM CALL-ZHO06692-105.
-               PERFORM CALL-ZBI07296-106.
-               PERFORM CALL-ZCL08415-107.
-               PERFORM CALL-ZBI06836-108.
-               PERFORM CALL-ZRE08487-109.
-               PERFORM CALL-ZCU06644-110.
-               PERFORM CALL-ZCU07474-111.
-               PERFORM CALL-ZAG06528-112.
-               PERFORM CALL-ZUW07110-113.
-               PERFORM CALL-ZEN08083-114.
-               PERFORM CALL-ZUW07190-115.
-               PERFORM CALL-ZBI08436-116.
-               PERFORM CALL-ZCU06704-117.
-               PERFORM CALL-ZCU07744-118.
-               PERFORM CALL-ZMT07481-119.
-               PERFORM CALL-ZCL08635-120.
-               PERFORM CALL-ZRE08157-121.
-               PERFORM CALL-ZPA06499-123.
-               PERFORM CALL-ZCL08445-124.
-               PERFORM CALL-ZEN06483-125.
-               PERFORM CALL-ZCU08254-126.
-               PERFORM CALL-ZRE07757-127.
-               PERFORM CALL-ZEN07033-128.
-               PERFORM CALL-ZMT06301-129.
-               PERFORM CALL-ZRE08317-130.
-               PERFORM CALL-ZHO06342-131.
-               PERFORM CALL-ZPA08589-132.
-               PERFORM CALL-ZUW07390-133.
-               PERFORM CALL-ZPA08669-134.
-               PERFORM CALL-ZCU07234-135.
-               PERFORM CALL-ZRE08127-136.
-               PERFORM CALL-ZEN07433-137.
-               PERFORM CALL-ZCL07065-138.
-               PERFORM CALL-ZUW06830-139.
-               PERFORM CALL-ZRE07437-140.
-               PERFORM CALL-ZCU07824-141.
-               PERFORM CALL-ZAG08078-143.
-               PERFORM CALL-ZPA07309-144.
-               PERFORM CALL-ZPA07619-145.
-               PERFORM CALL-ZPA07569-146.
-               PERFORM CALL-ZUW07740-147.
-               PERFORM CALL-ZRE07707-148.
-               PERFORM CALL-ZCU06734-149.
-               PERFORM CALL-ZCU06964-150.
-               PERFORM CALL-ZCL06485-151.
-               PERFORM CALL-ZCL08385-152.
-               PERFORM CALL-ZRE07837-154.
-               PERFORM CALL-ZUW07120-155.
-               PERFORM CALL-ZUW08260-156.
-               PERFORM CALL-ZEN07293-157.
-               PERFORM CALL-ZMT07961-158.
-               PERFORM CALL-ZBI07186-159.
-               PERFORM CALL-ZUW06720-160.
-               PERFORM CALL-ZEN06733-161.
-               PERFORM CALL-ZHO07642-162.
-               PERFORM CALL-ZHO06942-163.
-               PERFORM CALL-ZMT07971-164.
-               PERFORM CALL-ZPA08219-165.
-               PERFORM CALL-ZEN08333-167.
-               PERFORM CALL-ZCL07025-168.
-               PERFORM CALL-ZBI07626-169.
-               PERFORM CALL-ZRE07087-170.
-               PERFORM CALL-ZPA08049-171.
-               PERFORM CALL-ZUW06410-173.
-               PERFORM CALL-ZMT07701-174.
-               PERFORM CALL-ZUW06930-175.
-               PERFORM CALL-ZPA08369-176.
-               PERFORM CALL-ZHO08192-177.
-               PERFORM CALL-ZAG08688-179.
-               PERFORM CALL-ZCU07874-180.
-               PERFORM CALL-ZUW06870-181.
-               PERFORM CALL-ZRE08047-182.
-               PERFORM CALL-ZUW08190-183.
-               PERFORM CALL-ZCU07104-184.
-               PERFORM CALL-ZUW06590-186.
-               PERFORM CALL-ZEN08193-187.
-               PERFORM CALL-ZCU07804-188.
-               PERFORM CALL-ZCU07024-189.
-               PERFORM CALL-ZUW08230-190.
-               PERFORM CALL-ZHO06842-191.
-               PERFORM CALL-ZCU08364-193.
-               PERFORM CALL-ZRE08517-194.
-               PERFORM CALL-ZUW08120-195.
-               PERFORM CALL-ZMT08511-196.
-               PERFORM CALL-ZMT07331-197.
-               PERFORM CALL-ZEN06943-198.
-               PERFORM CALL-ZPA07629-199.
-               PERFORM CALL-ZBI08006-200.
-               PERFORM CALL-ZCU08654-201.
-               PERFORM CALL-ZCU07284-202.
-               PERFORM CALL-ZRE06967-203.
-               PERFORM CALL-ZRE07217-204.
-               PERFORM CALL-ZBI08266-205.
-               PERFORM CALL-ZUW06400-206.
-               PERFORM CALL-ZHO08182-207.
-               PERFORM CALL-ZMT08421-208.
-               PERFORM CALL-ZUW06450-209.
-               PERFORM CALL-ZAG07248-210.
-               PERFORM CALL-ZAG07318-211.
-               PERFORM CALL-ZCL07195-212.
-               PERFORM CALL-ZBI07326-213.
-               PERFORM CALL-ZMT07081-214.
-               PERFORM CALL-ZAG07118-215.
-               PERFORM CALL-ZHO07152-216.
-               PERFORM CALL-ZAG08178-217.
-               PERFORM CALL-ZCL07115-218.
-               PERFORM CALL-ZCU08154-219.
-               PERFORM CALL-ZCU07924-220.
-               PERFORM CALL-ZAG06798-221.
-               PERFORM CALL-ZRE06427-222.
-               PERFORM CALL-ZBI07216-223.
-               PERFORM CALL-ZAG06598-224.
-               PERFORM CALL-ZAG08578-226.
-               PERFORM CALL-ZCU07894-227.
-               PERFORM CALL-ZAG07368-229.
-               PERFORM CALL-ZMT07541-230.
-               PERFORM CALL-ZEN08603-231.
-               PERFORM CALL-ZMT07951-232.
-               PERFORM CALL-ZHO07142-233.
-               PERFORM CALL-ZBI07006-234.
-               PERFORM CALL-ZBI06676-235.
-               PERFORM CALL-ZEN06503-236.
-               PERFORM CALL-ZHO06812-237.
-               PERFORM CALL-ZHO07812-238.
-               PERFORM CALL-ZCL08095-239.
-               PERFORM CALL-ZHO08302-240.
-               PERFORM CALL-ZRE06927-241.
-               PERFORM CALL-ZMT07511-243.
-               PERFORM CALL-ZCU07074-244.
-               PERFORM CALL-ZCL07275-245.
-               PERFORM CALL-ZMT07551-246.
-               PERFORM CALL-ZMT07231-247.
-               PERFORM CALL-ZMT06591-249.
-               PERFORM CALL-ZUW07070-250.
-               PERFORM CALL-ZUW08320-251.
-               PERFORM CALL-ZEN06523-252.
-               PERFORM CALL-ZEN07243-253.
-               PERFORM CALL-ZRE08337-254.
-               PERFORM CALL-ZMT07991-255.
-               PERFORM CALL-ZAG06948-256.
-               PERFORM CALL-ZEN06543-258.
-               PERFORM CALL-ZCU08314-259.
-               PERFORM CALL-ZAG07308-260.
-               PERFORM CALL-ZUW07400-261.
-               PERFORM CALL-ZPA08529-262.
-               PERFORM CALL-ZAG08448-263.
-               PERFORM CALL-ZAG06368-264.
-               PERFORM CALL-ZCU07344-265.
-               PERFORM CALL-ZMT08491-266.
-               PERFORM CALL-ZBI07076-267.
-               PERFORM CALL-ZAG07538-268.
-               PERFORM CALL-ZCL07505-269.
-               PERFORM CALL-ZAG06748-270.
-               PERFORM CALL-ZRE08417-271.
-               PERFORM CALL-ZRE07157-272.
-               PERFORM CALL-ZPA07379-273.
-               PERFORM CALL-ZMT06791-274.
-               PERFORM CALL-ZBI06416-275.
-               PERFORM CALL-ZAG07178-276.
-               PERFORM CALL-ZRE08197-277.
-               PERFORM CALL-ZCL07365-278.
-               PERFORM CALL-ZMT06511-279.
-               PERFORM CALL-ZCL07135-280.
-               PERFORM CALL-ZCL06715-281.
-               PERFORM CALL-ZAG07518-282.
-               PERFORM CALL-ZPA06679-284.
-               PERFORM CALL-ZCL07535-285.
-               PERFORM CALL-ZRE06597-286.
-               PERFORM CALL-ZMT06761-287.
-               PERFORM CALL-ZEN08653-288.
-               PERFORM CALL-ZMT06661-289.
-               PERFORM CALL-ZCL06775-290.
-               PERFORM CALL-ZBI07506-291.
-               PERFORM CALL-ZEN06553-293.
-               PERFORM CALL-ZRE07597-294.
-               PERFORM CALL-ZRE07807-295.
-               PERFORM CALL-ZBI07956-296.
-               PERFORM CALL-ZHO06802-298.
-               PERFORM CALL-ZBI06356-299.
-               PERFORM CALL-ZBI07906-300.
+               PERFORM CALL-ZCL07143-001.
+               PERFORM CALL-ZHO07793-002.
+               PERFORM CALL-ZCL08408-003.
+               PERFORM CALL-ZEN07686-004.
+               PERFORM CALL-ZEN06500-005.
+               PERFORM CALL-ZPA08384-006.
+               PERFORM CALL-ZAG07168-008.
+               PERFORM CALL-ZMT07824-009.
+               PERFORM CALL-ZMT07111-010.
+               PERFORM CALL-ZCU08280-011.
+               PERFORM CALL-ZAG06757-012.
+               PERFORM CALL-ZCL08523-013.
+               PERFORM CALL-ZMT07066-014.
+               PERFORM CALL-ZAG06788-015.
+               PERFORM CALL-ZMT07830-016.
+               PERFORM CALL-ZCU06442-017.
+               PERFORM CALL-ZPA08168-018.
+               PERFORM CALL-ZCL08049-019.
+               PERFORM CALL-ZCU07016-020.
+               PERFORM CALL-ZHO07500-022.
+               PERFORM CALL-ZUW08086-023.
+               PERFORM CALL-ZEN07842-024.
+               PERFORM CALL-ZRE07384-025.
+               PERFORM CALL-ZEN07174-026.
+               PERFORM CALL-ZRE07684-027.
+               PERFORM CALL-ZAG07497-029.
+               PERFORM CALL-ZMT06933-030.
+               PERFORM CALL-ZCU07502-031.
+               PERFORM CALL-ZMT06597-032.
+               PERFORM CALL-ZCL07402-033.
+               PERFORM CALL-ZAG06355-034.
+               PERFORM CALL-ZMT08664-035.
+               PERFORM CALL-ZMT08421-036.
+               PERFORM CALL-ZCL07040-037.
+               PERFORM CALL-ZMT07217-038.
+               PERFORM CALL-ZMT07668-040.
+               PERFORM CALL-ZRE08374-041.
+               PERFORM CALL-ZHO08370-042.
+               PERFORM CALL-ZAG07639-043.
+               PERFORM CALL-ZMT08413-044.
+               PERFORM CALL-ZEN07608-045.
+               PERFORM CALL-ZBI08639-047.
+               PERFORM CALL-ZMT06466-048.
+               PERFORM CALL-ZMT08332-049.
+               PERFORM CALL-ZMT07832-052.
+               PERFORM CALL-ZAG07195-053.
+               PERFORM CALL-ZMT07110-054.
+               PERFORM CALL-ZPA06685-055.
+               PERFORM CALL-ZHO06579-056.
+               PERFORM CALL-ZEN06977-057.
+               PERFORM CALL-ZHO06767-058.
+               PERFORM CALL-ZEN07498-059.
+               PERFORM CALL-ZCU08649-060.
+               PERFORM CALL-ZCU08113-061.
+               PERFORM CALL-ZCL07238-062.
+               PERFORM CALL-ZPA07296-063.
+               PERFORM CALL-ZEN08561-064.
+               PERFORM CALL-ZRE08143-065.
+               PERFORM CALL-ZMT06663-066.
+               PERFORM CALL-ZCU08252-067.
+               PERFORM CALL-ZMT07015-068.
+               PERFORM CALL-ZMT07475-069.
+               PERFORM CALL-ZHO07604-070.
+               PERFORM CALL-ZMT08378-071.
+               PERFORM CALL-ZBI07889-072.
+               PERFORM CALL-ZHO07624-073.
+               PERFORM CALL-ZHO08090-075.
+               PERFORM CALL-ZHO06839-076.
+               PERFORM CALL-ZAG07478-077.
+               PERFORM CALL-ZMT08319-078.
+               PERFORM CALL-ZRE06614-079.
+               PERFORM CALL-ZAG08619-080.
+               PERFORM CALL-ZBI08129-081.
+               PERFORM CALL-ZEN06361-082.
+               PERFORM CALL-ZEN08211-083.
+               PERFORM CALL-ZMT07107-085.
+               PERFORM CALL-ZHO07600-086.
+               PERFORM CALL-ZAG07205-089.
+               PERFORM CALL-ZRE08388-091.
+               PERFORM CALL-ZEN06923-092.
+               PERFORM CALL-ZUW08235-093.
+               PERFORM CALL-ZPA08181-094.
+               PERFORM CALL-ZMT06686-095.
+               PERFORM CALL-ZHO06803-096.
+               PERFORM CALL-ZMT08333-097.
+               PERFORM CALL-ZRE07719-098.
+               PERFORM CALL-ZMT07910-099.
+               PERFORM CALL-ZHO06474-100.
+               PERFORM CALL-ZCL08029-101.
+               PERFORM CALL-ZPA06431-102.
+               PERFORM CALL-ZEN07303-103.
+               PERFORM CALL-ZAG07054-104.
+               PERFORM CALL-ZEN06672-105.
+               PERFORM CALL-ZCU08436-106.
+               PERFORM CALL-ZEN08433-107.
+               PERFORM CALL-ZAG07503-108.
+               PERFORM CALL-ZCL06305-109.
+               PERFORM CALL-ZUW07024-110.
+               PERFORM CALL-ZMT07331-111.
+               PERFORM CALL-ZMT08382-112.
+               PERFORM CALL-ZHO08027-113.
+               PERFORM CALL-ZCL06419-114.
+               PERFORM CALL-ZMT07789-115.
+               PERFORM CALL-ZEN08288-116.
+               PERFORM CALL-ZCU07529-117.
+               PERFORM CALL-ZMT07710-118.
+               PERFORM CALL-ZCU08266-119.
+               PERFORM CALL-ZAG07146-120.
+               PERFORM CALL-ZMT08596-121.
+               PERFORM CALL-ZEN07353-122.
+               PERFORM CALL-ZMT07543-123.
+               PERFORM CALL-ZMT07729-124.
+               PERFORM CALL-ZBI08627-125.
+               PERFORM CALL-ZEN07198-126.
+               PERFORM CALL-ZUW06815-127.
+               PERFORM CALL-ZEN07393-128.
+               PERFORM CALL-ZEN06609-129.
+               PERFORM CALL-ZMT06631-130.
+               PERFORM CALL-ZPA07192-131.
+               PERFORM CALL-ZCL08656-132.
+               PERFORM CALL-ZUW06591-133.
+               PERFORM CALL-ZMT07985-135.
+               PERFORM CALL-ZEN08447-136.
+               PERFORM CALL-ZUW06315-137.
+               PERFORM CALL-ZPA07035-138.
+               PERFORM CALL-ZCL07955-139.
+               PERFORM CALL-ZPA07417-140.
+               PERFORM CALL-ZMT06360-141.
+               PERFORM CALL-ZBI06482-142.
+               PERFORM CALL-ZCL07329-143.
+               PERFORM CALL-ZHO07550-144.
+               PERFORM CALL-ZHO07142-145.
+               PERFORM CALL-ZMT06324-146.
+               PERFORM CALL-ZUW06715-147.
+               PERFORM CALL-ZPA06746-148.
+               PERFORM CALL-ZEN07927-150.
+               PERFORM CALL-ZMT07919-151.
+               PERFORM CALL-ZPA07431-152.
+               PERFORM CALL-ZCL08308-153.
+               PERFORM CALL-ZMT07102-154.
+               PERFORM CALL-ZMT08078-155.
+               PERFORM CALL-ZCL08162-156.
+               PERFORM CALL-ZMT06824-157.
+               PERFORM CALL-ZHO08482-158.
+               PERFORM CALL-ZPA08216-159.
+               PERFORM CALL-ZCL07005-160.
+               PERFORM CALL-ZPA06363-161.
+               PERFORM CALL-ZCU06700-162.
+               PERFORM CALL-ZHO06574-163.
+               PERFORM CALL-ZRE06463-165.
+               PERFORM CALL-ZPA07214-166.
+               PERFORM CALL-ZUW08465-167.
+               PERFORM CALL-ZCU07409-168.
+               PERFORM CALL-ZRE06340-169.
+               PERFORM CALL-ZAG07650-170.
+               PERFORM CALL-ZUW07936-172.
+               PERFORM CALL-ZCL08204-173.
+               PERFORM CALL-ZBI06733-175.
+               PERFORM CALL-ZHO06505-176.
+               PERFORM CALL-ZBI06791-177.
+               PERFORM CALL-ZPA07872-178.
+               PERFORM CALL-ZMT07477-179.
+               PERFORM CALL-ZAG08242-180.
+               PERFORM CALL-ZRE06872-181.
+               PERFORM CALL-ZCL08456-182.
+               PERFORM CALL-ZBI08590-183.
+               PERFORM CALL-ZMT06325-184.
+               PERFORM CALL-ZHO07969-185.
+               PERFORM CALL-ZUW08287-186.
+               PERFORM CALL-ZMT07765-187.
+               PERFORM CALL-ZPA08657-188.
+               PERFORM CALL-ZBI06966-189.
+               PERFORM CALL-ZHO07565-190.
+               PERFORM CALL-ZHO06867-191.
+               PERFORM CALL-ZHO07316-192.
+               PERFORM CALL-ZEN06384-193.
+               PERFORM CALL-ZCU08138-194.
+               PERFORM CALL-ZMT06422-195.
+               PERFORM CALL-ZMT07632-196.
+               PERFORM CALL-ZEN06427-197.
+               PERFORM CALL-ZMT08080-198.
+               PERFORM CALL-ZAG07365-199.
+               PERFORM CALL-ZHO07799-200.
+               PERFORM CALL-ZHO07021-201.
+               PERFORM CALL-ZMT08560-202.
+               PERFORM CALL-ZCL08461-203.
+               PERFORM CALL-ZCU07944-204.
+               PERFORM CALL-ZMT08368-205.
+               PERFORM CALL-ZEN07392-206.
+               PERFORM CALL-ZHO07852-207.
+               PERFORM CALL-ZEN07452-208.
+               PERFORM CALL-ZRE07236-209.
+               PERFORM CALL-ZCU06350-210.
+               PERFORM CALL-ZMT08112-211.
+               PERFORM CALL-ZRE07184-212.
+               PERFORM CALL-ZEN07078-213.
+               PERFORM CALL-ZBI07089-214.
+               PERFORM CALL-ZMT07998-215.
+               PERFORM CALL-ZPA07361-216.
+               PERFORM CALL-ZHO06810-217.
+               PERFORM CALL-ZCL07678-218.
+               PERFORM CALL-ZMT06552-219.
+               PERFORM CALL-ZEN07189-220.
+               PERFORM CALL-ZRE07707-221.
+               PERFORM CALL-ZCL07376-222.
+               PERFORM CALL-ZCU07583-223.
+               PERFORM CALL-ZPA07962-225.
+               PERFORM CALL-ZEN06624-226.
+               PERFORM CALL-ZEN07096-227.
+               PERFORM CALL-ZBI07911-228.
+               PERFORM CALL-ZAG06462-229.
+               PERFORM CALL-ZAG07349-230.
+               PERFORM CALL-ZAG07859-231.
+               PERFORM CALL-ZBI07491-233.
+               PERFORM CALL-ZAG07177-234.
+               PERFORM CALL-ZMT07967-235.
+               PERFORM CALL-ZMT06892-236.
+               PERFORM CALL-ZMT06991-237.
+               PERFORM CALL-ZEN08659-238.
+               PERFORM CALL-ZRE08346-239.
+               PERFORM CALL-ZAG06924-240.
+               PERFORM CALL-ZMT08221-241.
+               PERFORM CALL-ZEN07938-242.
+               PERFORM CALL-ZBI08337-244.
+               PERFORM CALL-ZMT07559-245.
+               PERFORM CALL-ZHO06502-246.
+               PERFORM CALL-ZRE06618-247.
+               PERFORM CALL-ZHO08046-248.
+               PERFORM CALL-ZEN06368-249.
+               PERFORM CALL-ZMT07805-250.
+               PERFORM CALL-ZCU06611-251.
+               PERFORM CALL-ZPA06902-253.
+               PERFORM CALL-ZBI08524-254.
+               PERFORM CALL-ZRE06952-255.
+               PERFORM CALL-ZMT07028-256.
+               PERFORM CALL-ZBI06644-257.
+               PERFORM CALL-ZHO08599-258.
+               PERFORM CALL-ZBI08588-259.
+               PERFORM CALL-ZMT07644-260.
+               PERFORM CALL-ZMT08198-261.
+               PERFORM CALL-ZUW06904-262.
+               PERFORM CALL-ZEN08666-263.
+               PERFORM CALL-ZHO07318-264.
+               PERFORM CALL-ZCL06779-265.
+               PERFORM CALL-ZMT07094-266.
+               PERFORM CALL-ZBI06775-267.
+               PERFORM CALL-ZMT08554-268.
+               PERFORM CALL-ZCU07311-269.
+               PERFORM CALL-ZUW08501-270.
+               PERFORM CALL-ZCU07760-271.
+               PERFORM CALL-ZHO08670-272.
+               PERFORM CALL-ZUW08692-273.
+               PERFORM CALL-ZUW07230-274.
+               PERFORM CALL-ZEN08480-275.
+               PERFORM CALL-ZRE07007-276.
+               PERFORM CALL-ZPA08549-277.
+               PERFORM CALL-ZEN08353-278.
+               PERFORM CALL-ZBI07085-279.
+               PERFORM CALL-ZCU07126-280.
+               PERFORM CALL-ZEN07588-281.
+               PERFORM CALL-ZBI07509-283.
+               PERFORM CALL-ZPA08347-284.
+               PERFORM CALL-ZMT08587-285.
+               PERFORM CALL-ZAG07255-286.
+               PERFORM CALL-ZCU07291-287.
+               PERFORM CALL-ZEN08693-289.
+               PERFORM CALL-ZMT08442-290.
+               PERFORM CALL-ZRE06517-291.
+               PERFORM CALL-ZCU07000-292.
+               PERFORM CALL-ZCL06907-293.
+               PERFORM CALL-ZHO06605-294.
+               PERFORM CALL-ZRE06390-295.
+               PERFORM CALL-ZMT07959-296.
+               PERFORM CALL-ZHO07788-298.
+               PERFORM CALL-ZPA07290-299.
+               PERFORM CALL-ZHO06402-300.
                EXEC CICS RETURN END-EXEC.
       *----------------------------------------------------------------*
-       CALL-ZRE06517-001.
-               CALL 'ZRE06517' USING DFHCOMMAREA
+       CALL-ZCL07143-001.
+               CALL 'ZCL07143' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06517 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL07143 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT08551-002.
-               CALL 'ZMT08551' USING DFHCOMMAREA
+       CALL-ZHO07793-002.
+               CALL 'ZHO07793' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT08551 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07793 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZPA07759-003.
-               CALL 'ZPA07759' USING DFHCOMMAREA
+       CALL-ZCL08408-003.
+               CALL 'ZCL08408' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA07759 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL08408 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT08371-004.
-               CALL 'ZMT08371' USING DFHCOMMAREA
+       CALL-ZEN07686-004.
+               CALL 'ZEN07686' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT08371 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07686 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO07042-005.
-               CALL 'ZHO07042' USING DFHCOMMAREA
+       CALL-ZEN06500-005.
+               CALL 'ZEN06500' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07042 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06500 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07815-006.
-               CALL 'ZCL07815' USING DFHCOMMAREA
+       CALL-ZPA08384-006.
+               CALL 'ZPA08384' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07815 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA08384 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO07702-007.
-               CALL 'ZHO07702' USING DFHCOMMAREA
+       CALL-ZEN06607-007.
+               CALL 'ZEN06607' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07702 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06607 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW08400-008.
-               CALL 'ZUW08400' USING DFHCOMMAREA
+       CALL-ZAG07168-008.
+               CALL 'ZAG07168' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08400 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG07168 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU06824-009.
-               CALL 'ZCU06824' USING DFHCOMMAREA
+       CALL-ZMT07824-009.
+               CALL 'ZMT07824' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU06824 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07824 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07741-010.
-               CALL 'ZMT07741' USING DFHCOMMAREA
+       CALL-ZMT07111-010.
+               CALL 'ZMT07111' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07741 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07111 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI06606-011.
-               CALL 'ZBI06606' USING DFHCOMMAREA
+       CALL-ZCU08280-011.
+               CALL 'ZCU08280' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI06606 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU08280 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN06353-012.
-               CALL 'ZEN06353' USING DFHCOMMAREA
+       CALL-ZAG06757-012.
+               CALL 'ZAG06757' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06353 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG06757 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN06433-013.
-               CALL 'ZEN06433' USING DFHCOMMAREA
+       CALL-ZCL08523-013.
+               CALL 'ZCL08523' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06433 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL08523 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07688-014.
-               CALL 'ZAG07688' USING DFHCOMMAREA
+       CALL-ZMT07066-014.
+               CALL 'ZMT07066' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07688 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07066 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU08034-015.
-               CALL 'ZCU08034' USING DFHCOMMAREA
+       CALL-ZAG06788-015.
+               CALL 'ZAG06788' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU08034 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG06788 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO08682-016.
-               CALL 'ZHO08682' USING DFHCOMMAREA
+       CALL-ZMT07830-016.
+               CALL 'ZMT07830' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO08682 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07830 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06868-017.
-               CALL 'ZAG06868' USING DFHCOMMAREA
+       CALL-ZCU06442-017.
+               CALL 'ZCU06442' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06868 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU06442 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07925-018.
-               CALL 'ZCL07925' USING DFHCOMMAREA
+       CALL-ZPA08168-018.
+               CALL 'ZPA08168' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07925 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA08168 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06678-019.
-               CALL 'ZAG06678' USING DFHCOMMAREA
+       CALL-ZCL08049-019.
+               CALL 'ZCL08049' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06678 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL08049 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI06546-020.
-               CALL 'ZBI06546' USING DFHCOMMAREA
+       CALL-ZCU07016-020.
+               CALL 'ZCU07016' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI06546 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU07016 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI06826-021.
-               CALL 'ZBI06826' USING DFHCOMMAREA
+       CALL-ZMT08673-021.
+               CALL 'ZMT08673' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI06826 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT08673 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07661-022.
-               CALL 'ZMT07661' USING DFHCOMMAREA
+       CALL-ZHO07500-022.
+               CALL 'ZHO07500' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07661 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07500 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE07577-023.
-               CALL 'ZRE07577' USING DFHCOMMAREA
+       CALL-ZUW08086-023.
+               CALL 'ZUW08086' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07577 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZUW08086 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06758-024.
-               CALL 'ZAG06758' USING DFHCOMMAREA
+       CALL-ZEN07842-024.
+               CALL 'ZEN07842' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06758 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07842 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN07073-025.
-               CALL 'ZEN07073' USING DFHCOMMAREA
+       CALL-ZRE07384-025.
+               CALL 'ZRE07384' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07073 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE07384 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO06552-026.
-               CALL 'ZHO06552' USING DFHCOMMAREA
+       CALL-ZEN07174-026.
+               CALL 'ZEN07174' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06552 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07174 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU07254-027.
-               CALL 'ZCU07254' USING DFHCOMMAREA
+       CALL-ZRE07684-027.
+               CALL 'ZRE07684' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07254 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE07684 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW06600-028.
-               CALL 'ZUW06600' USING DFHCOMMAREA
+       CALL-ZHO06629-028.
+               CALL 'ZHO06629' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06600 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO06629 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW07430-029.
-               CALL 'ZUW07430' USING DFHCOMMAREA
+       CALL-ZAG07497-029.
+               CALL 'ZAG07497' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07430 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG07497 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI06616-030.
-               CALL 'ZBI06616' USING DFHCOMMAREA
+       CALL-ZMT06933-030.
+               CALL 'ZMT06933' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI06616 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06933 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07768-031.
-               CALL 'ZAG07768' USING DFHCOMMAREA
+       CALL-ZCU07502-031.
+               CALL 'ZCU07502' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07768 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU07502 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW06330-032.
-               CALL 'ZUW06330' USING DFHCOMMAREA
+       CALL-ZMT06597-032.
+               CALL 'ZMT06597' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06330 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06597 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL08495-033.
-               CALL 'ZCL08495' USING DFHCOMMAREA
+       CALL-ZCL07402-033.
+               CALL 'ZCL07402' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL08495 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL07402 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG08458-034.
-               CALL 'ZAG08458' USING DFHCOMMAREA
+       CALL-ZAG06355-034.
+               CALL 'ZAG06355' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08458 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG06355 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZPA06349-035.
-               CALL 'ZPA06349' USING DFHCOMMAREA
+       CALL-ZMT08664-035.
+               CALL 'ZMT08664' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA06349 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT08664 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT06411-036.
-               CALL 'ZMT06411' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06411 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG06468-037.
-               CALL 'ZAG06468' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06468 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07317-038.
-               CALL 'ZRE07317' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07317 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06360-039.
-               CALL 'ZUW06360' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06360 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT08471-040.
-               CALL 'ZMT08471' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT08471 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU08594-041.
-               CALL 'ZCU08594' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU08594 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI08226-042.
-               CALL 'ZBI08226' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08226 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO06372-043.
-               CALL 'ZHO06372' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06372 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT07881-044.
-               CALL 'ZMT07881' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07881 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG07058-045.
-               CALL 'ZAG07058' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07058 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI07396-046.
-               CALL 'ZBI07396' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07396 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI08216-047.
-               CALL 'ZBI08216' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08216 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07424-048.
-               CALL 'ZCU07424' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07424 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07220-049.
-               CALL 'ZUW07220' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07220 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07884-050.
-               CALL 'ZCU07884' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07884 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN08033-051.
-               CALL 'ZEN08033' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08033 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT06821-052.
-               CALL 'ZMT06821' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06821 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA08549-053.
-               CALL 'ZPA08549' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA08549 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07780-054.
-               CALL 'ZUW07780' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07780 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI07416-055.
-               CALL 'ZBI07416' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07416 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG07928-056.
-               CALL 'ZAG07928' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07928 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT06471-057.
-               CALL 'ZMT06471' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06471 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN06793-058.
-               CALL 'ZEN06793' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06793 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO07992-059.
-               CALL 'ZHO07992' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07992 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT07141-060.
-               CALL 'ZMT07141' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07141 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG07748-061.
-               CALL 'ZAG07748' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07748 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07387-062.
-               CALL 'ZRE07387' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07387 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07403-063.
-               CALL 'ZEN07403' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07403 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06520-064.
-               CALL 'ZUW06520' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06520 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG07498-065.
-               CALL 'ZAG07498' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07498 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG08548-066.
-               CALL 'ZAG08548' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08548 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07423-067.
-               CALL 'ZEN07423' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07423 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07053-068.
-               CALL 'ZEN07053' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07053 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG06998-069.
-               CALL 'ZAG06998' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06998 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE06777-070.
-               CALL 'ZRE06777' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06777 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG06898-071.
-               CALL 'ZAG06898' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06898 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07227-072.
-               CALL 'ZRE07227' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07227 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07273-073.
-               CALL 'ZEN07273' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07273 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL07885-074.
-               CALL 'ZCL07885' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07885 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA06979-075.
-               CALL 'ZPA06979' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA06979 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07003-076.
-               CALL 'ZEN07003' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07003 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL06655-077.
-               CALL 'ZCL06655' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL06655 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07417-078.
-               CALL 'ZRE07417' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07417 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA07969-079.
-               CALL 'ZPA07969' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA07969 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN06653-080.
-               CALL 'ZEN06653' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06653 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07567-081.
-               CALL 'ZRE07567' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07567 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW08200-082.
-               CALL 'ZUW08200' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08200 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07204-083.
-               CALL 'ZCU07204' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07204 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN06463-084.
-               CALL 'ZEN06463' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06463 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO07092-085.
-               CALL 'ZHO07092' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07092 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL08225-086.
-               CALL 'ZCL08225' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL08225 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO06592-087.
-               CALL 'ZHO06592' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06592 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW08220-088.
-               CALL 'ZUW08220' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08220 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU06304-089.
-               CALL 'ZCU06304' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU06304 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN08313-090.
-               CALL 'ZEN08313' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08313 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07613-091.
-               CALL 'ZEN07613' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07613 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI08176-092.
-               CALL 'ZBI08176' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08176 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE06757-093.
-               CALL 'ZRE06757' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06757 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG06958-094.
-               CALL 'ZAG06958' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06958 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU08134-095.
-               CALL 'ZCU08134' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU08134 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE06497-096.
-               CALL 'ZRE06497' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06497 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO06972-097.
-               CALL 'ZHO06972' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06972 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN08553-098.
-               CALL 'ZEN08553' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08553 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO07022-099.
-               CALL 'ZHO07022' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07022 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL07745-100.
-               CALL 'ZCL07745' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07745 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW08180-101.
-               CALL 'ZUW08180' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08180 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07260-102.
-               CALL 'ZUW07260' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07260 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO07222-103.
-               CALL 'ZHO07222' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07222 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI08186-104.
-               CALL 'ZBI08186' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08186 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO06692-105.
-               CALL 'ZHO06692' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06692 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI07296-106.
-               CALL 'ZBI07296' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07296 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL08415-107.
-               CALL 'ZCL08415' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL08415 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI06836-108.
-               CALL 'ZBI06836' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI06836 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE08487-109.
-               CALL 'ZRE08487' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08487 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU06644-110.
-               CALL 'ZCU06644' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU06644 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07474-111.
-               CALL 'ZCU07474' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07474 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG06528-112.
-               CALL 'ZAG06528' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06528 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07110-113.
-               CALL 'ZUW07110' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07110 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN08083-114.
-               CALL 'ZEN08083' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08083 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07190-115.
-               CALL 'ZUW07190' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07190 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI08436-116.
-               CALL 'ZBI08436' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08436 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU06704-117.
-               CALL 'ZCU06704' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU06704 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07744-118.
-               CALL 'ZCU07744' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07744 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT07481-119.
-               CALL 'ZMT07481' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07481 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL08635-120.
-               CALL 'ZCL08635' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL08635 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE08157-121.
-               CALL 'ZRE08157' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08157 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07850-122.
-               CALL 'ZUW07850' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07850 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA06499-123.
-               CALL 'ZPA06499' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA06499 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL08445-124.
-               CALL 'ZCL08445' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL08445 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN06483-125.
-               CALL 'ZEN06483' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06483 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU08254-126.
-               CALL 'ZCU08254' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU08254 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07757-127.
-               CALL 'ZRE07757' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07757 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07033-128.
-               CALL 'ZEN07033' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07033 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT06301-129.
-               CALL 'ZMT06301' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06301 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE08317-130.
-               CALL 'ZRE08317' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08317 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO06342-131.
-               CALL 'ZHO06342' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06342 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA08589-132.
-               CALL 'ZPA08589' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA08589 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07390-133.
-               CALL 'ZUW07390' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07390 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA08669-134.
-               CALL 'ZPA08669' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA08669 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07234-135.
-               CALL 'ZCU07234' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07234 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE08127-136.
-               CALL 'ZRE08127' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08127 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07433-137.
-               CALL 'ZEN07433' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07433 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL07065-138.
-               CALL 'ZCL07065' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07065 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06830-139.
-               CALL 'ZUW06830' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06830 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07437-140.
-               CALL 'ZRE07437' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07437 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07824-141.
-               CALL 'ZCU07824' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07824 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG08028-142.
-               CALL 'ZAG08028' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08028 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG08078-143.
-               CALL 'ZAG08078' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08078 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA07309-144.
-               CALL 'ZPA07309' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA07309 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA07619-145.
-               CALL 'ZPA07619' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA07619 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA07569-146.
-               CALL 'ZPA07569' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA07569 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07740-147.
-               CALL 'ZUW07740' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07740 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07707-148.
-               CALL 'ZRE07707' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07707 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU06734-149.
-               CALL 'ZCU06734' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU06734 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU06964-150.
-               CALL 'ZCU06964' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU06964 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL06485-151.
-               CALL 'ZCL06485' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL06485 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL08385-152.
-               CALL 'ZCL08385' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL08385 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG08538-153.
-               CALL 'ZAG08538' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08538 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07837-154.
-               CALL 'ZRE07837' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07837 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW07120-155.
-               CALL 'ZUW07120' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07120 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW08260-156.
-               CALL 'ZUW08260' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08260 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN07293-157.
-               CALL 'ZEN07293' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07293 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT07961-158.
-               CALL 'ZMT07961' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07961 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI07186-159.
-               CALL 'ZBI07186' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07186 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06720-160.
-               CALL 'ZUW06720' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06720 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN06733-161.
-               CALL 'ZEN06733' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06733 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO07642-162.
-               CALL 'ZHO07642' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07642 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO06942-163.
-               CALL 'ZHO06942' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06942 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT07971-164.
-               CALL 'ZMT07971' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07971 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA08219-165.
-               CALL 'ZPA08219' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA08219 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO07932-166.
-               CALL 'ZHO07932' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07932 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN08333-167.
-               CALL 'ZEN08333' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08333 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL07025-168.
-               CALL 'ZCL07025' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07025 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI07626-169.
-               CALL 'ZBI07626' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07626 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07087-170.
-               CALL 'ZRE07087' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07087 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA08049-171.
-               CALL 'ZPA08049' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA08049 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA08339-172.
-               CALL 'ZPA08339' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA08339 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06410-173.
-               CALL 'ZUW06410' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06410 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT07701-174.
-               CALL 'ZMT07701' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07701 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06930-175.
-               CALL 'ZUW06930' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06930 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA08369-176.
-               CALL 'ZPA08369' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA08369 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO08192-177.
-               CALL 'ZHO08192' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO08192 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT08561-178.
-               CALL 'ZMT08561' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT08561 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZAG08688-179.
-               CALL 'ZAG08688' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08688 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07874-180.
-               CALL 'ZCU07874' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07874 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06870-181.
-               CALL 'ZUW06870' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06870 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE08047-182.
-               CALL 'ZRE08047' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08047 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW08190-183.
-               CALL 'ZUW08190' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08190 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07104-184.
-               CALL 'ZCU07104' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07104 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCL07295-185.
-               CALL 'ZCL07295' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07295 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06590-186.
-               CALL 'ZUW06590' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06590 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN08193-187.
-               CALL 'ZEN08193' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08193 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07804-188.
-               CALL 'ZCU07804' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07804 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07024-189.
-               CALL 'ZCU07024' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07024 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW08230-190.
-               CALL 'ZUW08230' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08230 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO06842-191.
-               CALL 'ZHO06842' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06842 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT07681-192.
-               CALL 'ZMT07681' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07681 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU08364-193.
-               CALL 'ZCU08364' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU08364 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE08517-194.
-               CALL 'ZRE08517' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08517 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW08120-195.
-               CALL 'ZUW08120' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08120 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT08511-196.
-               CALL 'ZMT08511' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT08511 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT07331-197.
-               CALL 'ZMT07331' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07331 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZEN06943-198.
-               CALL 'ZEN06943' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06943 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZPA07629-199.
-               CALL 'ZPA07629' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA07629 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI08006-200.
-               CALL 'ZBI08006' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08006 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU08654-201.
-               CALL 'ZCU08654' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU08654 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU07284-202.
-               CALL 'ZCU07284' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07284 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE06967-203.
-               CALL 'ZRE06967' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06967 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZRE07217-204.
-               CALL 'ZRE07217' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07217 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZBI08266-205.
-               CALL 'ZBI08266' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08266 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZUW06400-206.
-               CALL 'ZUW06400' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06400 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZHO08182-207.
-               CALL 'ZHO08182' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO08182 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZMT08421-208.
+       CALL-ZMT08421-036.
                CALL 'ZMT08421' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
@@ -2331,271 +955,823 @@
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW06450-209.
-               CALL 'ZUW06450' USING DFHCOMMAREA
+       CALL-ZCL07040-037.
+               CALL 'ZCL07040' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW06450 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL07040 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07248-210.
-               CALL 'ZAG07248' USING DFHCOMMAREA
+       CALL-ZMT07217-038.
+               CALL 'ZMT07217' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07248 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07217 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07318-211.
-               CALL 'ZAG07318' USING DFHCOMMAREA
+       CALL-ZMT07215-039.
+               CALL 'ZMT07215' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07318 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07215 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07195-212.
-               CALL 'ZCL07195' USING DFHCOMMAREA
+       CALL-ZMT07668-040.
+               CALL 'ZMT07668' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07195 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07668 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI07326-213.
-               CALL 'ZBI07326' USING DFHCOMMAREA
+       CALL-ZRE08374-041.
+               CALL 'ZRE08374' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07326 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE08374 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07081-214.
-               CALL 'ZMT07081' USING DFHCOMMAREA
+       CALL-ZHO08370-042.
+               CALL 'ZHO08370' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07081 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO08370 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07118-215.
-               CALL 'ZAG07118' USING DFHCOMMAREA
+       CALL-ZAG07639-043.
+               CALL 'ZAG07639' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07118 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG07639 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO07152-216.
-               CALL 'ZHO07152' USING DFHCOMMAREA
+       CALL-ZMT08413-044.
+               CALL 'ZMT08413' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07152 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT08413 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG08178-217.
-               CALL 'ZAG08178' USING DFHCOMMAREA
+       CALL-ZEN07608-045.
+               CALL 'ZEN07608' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08178 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07608 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07115-218.
-               CALL 'ZCL07115' USING DFHCOMMAREA
+       CALL-ZRE08154-046.
+               CALL 'ZRE08154' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07115 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE08154 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU08154-219.
-               CALL 'ZCU08154' USING DFHCOMMAREA
+       CALL-ZBI08639-047.
+               CALL 'ZBI08639' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU08154 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZBI08639 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU07924-220.
-               CALL 'ZCU07924' USING DFHCOMMAREA
+       CALL-ZMT06466-048.
+               CALL 'ZMT06466' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07924 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06466 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06798-221.
-               CALL 'ZAG06798' USING DFHCOMMAREA
+       CALL-ZMT08332-049.
+               CALL 'ZMT08332' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06798 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT08332 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE06427-222.
-               CALL 'ZRE06427' USING DFHCOMMAREA
+       CALL-ZHO07584-050.
+               CALL 'ZHO07584' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06427 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07584 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI07216-223.
-               CALL 'ZBI07216' USING DFHCOMMAREA
+       CALL-ZHO07851-051.
+               CALL 'ZHO07851' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07216 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07851 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06598-224.
-               CALL 'ZAG06598' USING DFHCOMMAREA
+       CALL-ZMT07832-052.
+               CALL 'ZMT07832' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06598 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07832 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO07692-225.
-               CALL 'ZHO07692' USING DFHCOMMAREA
+       CALL-ZAG07195-053.
+               CALL 'ZAG07195' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07692 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG07195 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG08578-226.
-               CALL 'ZAG08578' USING DFHCOMMAREA
+       CALL-ZMT07110-054.
+               CALL 'ZMT07110' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08578 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07110 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU07894-227.
-               CALL 'ZCU07894' USING DFHCOMMAREA
+       CALL-ZPA06685-055.
+               CALL 'ZPA06685' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07894 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA06685 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06508-228.
-               CALL 'ZAG06508' USING DFHCOMMAREA
+       CALL-ZHO06579-056.
+               CALL 'ZHO06579' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06508 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO06579 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07368-229.
-               CALL 'ZAG07368' USING DFHCOMMAREA
+       CALL-ZEN06977-057.
+               CALL 'ZEN06977' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07368 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06977 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07541-230.
-               CALL 'ZMT07541' USING DFHCOMMAREA
+       CALL-ZHO06767-058.
+               CALL 'ZHO06767' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07541 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO06767 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN08603-231.
-               CALL 'ZEN08603' USING DFHCOMMAREA
+       CALL-ZEN07498-059.
+               CALL 'ZEN07498' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08603 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07498 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07951-232.
-               CALL 'ZMT07951' USING DFHCOMMAREA
+       CALL-ZCU08649-060.
+               CALL 'ZCU08649' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07951 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU08649 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO07142-233.
-               CALL 'ZHO07142' USING DFHCOMMAREA
+       CALL-ZCU08113-061.
+               CALL 'ZCU08113' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07142 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU08113 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI07006-234.
-               CALL 'ZBI07006' USING DFHCOMMAREA
+       CALL-ZCL07238-062.
+               CALL 'ZCL07238' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07006 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL07238 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI06676-235.
-               CALL 'ZBI06676' USING DFHCOMMAREA
+       CALL-ZPA07296-063.
+               CALL 'ZPA07296' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI06676 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA07296 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN06503-236.
-               CALL 'ZEN06503' USING DFHCOMMAREA
+       CALL-ZEN08561-064.
+               CALL 'ZEN08561' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06503 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN08561 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO06812-237.
-               CALL 'ZHO06812' USING DFHCOMMAREA
+       CALL-ZRE08143-065.
+               CALL 'ZRE08143' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06812 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE08143 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO07812-238.
-               CALL 'ZHO07812' USING DFHCOMMAREA
+       CALL-ZMT06663-066.
+               CALL 'ZMT06663' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO07812 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06663 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL08095-239.
-               CALL 'ZCL08095' USING DFHCOMMAREA
+       CALL-ZCU08252-067.
+               CALL 'ZCU08252' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL08095 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU08252 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO08302-240.
-               CALL 'ZHO08302' USING DFHCOMMAREA
+       CALL-ZMT07015-068.
+               CALL 'ZMT07015' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO08302 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07015 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE06927-241.
-               CALL 'ZRE06927' USING DFHCOMMAREA
+       CALL-ZMT07475-069.
+               CALL 'ZMT07475' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06927 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07475 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07955-242.
+       CALL-ZHO07604-070.
+               CALL 'ZHO07604' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO07604 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08378-071.
+               CALL 'ZMT08378' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08378 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI07889-072.
+               CALL 'ZBI07889' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI07889 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO07624-073.
+               CALL 'ZHO07624' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO07624 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT06337-074.
+               CALL 'ZMT06337' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT06337 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO08090-075.
+               CALL 'ZHO08090' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO08090 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO06839-076.
+               CALL 'ZHO06839' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO06839 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07478-077.
+               CALL 'ZAG07478' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07478 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08319-078.
+               CALL 'ZMT08319' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08319 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE06614-079.
+               CALL 'ZRE06614' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE06614 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG08619-080.
+               CALL 'ZAG08619' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG08619 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI08129-081.
+               CALL 'ZBI08129' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI08129 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN06361-082.
+               CALL 'ZEN06361' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN06361 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08211-083.
+               CALL 'ZEN08211' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08211 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO06799-084.
+               CALL 'ZHO06799' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO06799 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07107-085.
+               CALL 'ZMT07107' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07107 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO07600-086.
+               CALL 'ZHO07600' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO07600 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07138-087.
+               CALL 'ZMT07138' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07138 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU08592-088.
+               CALL 'ZCU08592' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU08592 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07205-089.
+               CALL 'ZAG07205' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07205 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07645-090.
+               CALL 'ZMT07645' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07645 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE08388-091.
+               CALL 'ZRE08388' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE08388 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN06923-092.
+               CALL 'ZEN06923' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN06923 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW08235-093.
+               CALL 'ZUW08235' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW08235 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA08181-094.
+               CALL 'ZPA08181' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA08181 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT06686-095.
+               CALL 'ZMT06686' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT06686 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO06803-096.
+               CALL 'ZHO06803' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO06803 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08333-097.
+               CALL 'ZMT08333' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08333 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE07719-098.
+               CALL 'ZRE07719' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE07719 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07910-099.
+               CALL 'ZMT07910' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07910 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO06474-100.
+               CALL 'ZHO06474' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO06474 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL08029-101.
+               CALL 'ZCL08029' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL08029 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA06431-102.
+               CALL 'ZPA06431' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA06431 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07303-103.
+               CALL 'ZEN07303' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07303 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07054-104.
+               CALL 'ZAG07054' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07054 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN06672-105.
+               CALL 'ZEN06672' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN06672 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU08436-106.
+               CALL 'ZCU08436' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU08436 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08433-107.
+               CALL 'ZEN08433' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08433 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07503-108.
+               CALL 'ZAG07503' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07503 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL06305-109.
+               CALL 'ZCL06305' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL06305 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW07024-110.
+               CALL 'ZUW07024' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW07024 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07331-111.
+               CALL 'ZMT07331' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07331 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08382-112.
+               CALL 'ZMT08382' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08382 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO08027-113.
+               CALL 'ZHO08027' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO08027 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL06419-114.
+               CALL 'ZCL06419' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL06419 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07789-115.
+               CALL 'ZMT07789' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07789 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08288-116.
+               CALL 'ZEN08288' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08288 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07529-117.
+               CALL 'ZCU07529' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07529 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07710-118.
+               CALL 'ZMT07710' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07710 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU08266-119.
+               CALL 'ZCU08266' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU08266 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07146-120.
+               CALL 'ZAG07146' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07146 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08596-121.
+               CALL 'ZMT08596' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08596 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07353-122.
+               CALL 'ZEN07353' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07353 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07543-123.
+               CALL 'ZMT07543' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07543 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07729-124.
+               CALL 'ZMT07729' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07729 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI08627-125.
+               CALL 'ZBI08627' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI08627 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07198-126.
+               CALL 'ZEN07198' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07198 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW06815-127.
+               CALL 'ZUW06815' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW06815 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07393-128.
+               CALL 'ZEN07393' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07393 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN06609-129.
+               CALL 'ZEN06609' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN06609 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT06631-130.
+               CALL 'ZMT06631' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT06631 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA07192-131.
+               CALL 'ZPA07192' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA07192 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL08656-132.
+               CALL 'ZCL08656' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL08656 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW06591-133.
+               CALL 'ZUW06591' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW06591 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL07492-134.
+               CALL 'ZCL07492' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL07492 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07985-135.
+               CALL 'ZMT07985' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07985 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08447-136.
+               CALL 'ZEN08447' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08447 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW06315-137.
+               CALL 'ZUW06315' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW06315 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA07035-138.
+               CALL 'ZPA07035' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA07035 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL07955-139.
                CALL 'ZCL07955' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
@@ -2603,467 +1779,1291 @@
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07511-243.
-               CALL 'ZMT07511' USING DFHCOMMAREA
+       CALL-ZPA07417-140.
+               CALL 'ZPA07417' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07511 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA07417 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU07074-244.
-               CALL 'ZCU07074' USING DFHCOMMAREA
+       CALL-ZMT06360-141.
+               CALL 'ZMT06360' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07074 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06360 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07275-245.
-               CALL 'ZCL07275' USING DFHCOMMAREA
+       CALL-ZBI06482-142.
+               CALL 'ZBI06482' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07275 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZBI06482 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07551-246.
-               CALL 'ZMT07551' USING DFHCOMMAREA
+       CALL-ZCL07329-143.
+               CALL 'ZCL07329' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07551 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL07329 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07231-247.
-               CALL 'ZMT07231' USING DFHCOMMAREA
+       CALL-ZHO07550-144.
+               CALL 'ZHO07550' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07231 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07550 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU06854-248.
-               CALL 'ZCU06854' USING DFHCOMMAREA
+       CALL-ZHO07142-145.
+               CALL 'ZHO07142' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU06854 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07142 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT06591-249.
-               CALL 'ZMT06591' USING DFHCOMMAREA
+       CALL-ZMT06324-146.
+               CALL 'ZMT06324' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06591 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06324 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW07070-250.
-               CALL 'ZUW07070' USING DFHCOMMAREA
+       CALL-ZUW06715-147.
+               CALL 'ZUW06715' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07070 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZUW06715 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW08320-251.
-               CALL 'ZUW08320' USING DFHCOMMAREA
+       CALL-ZPA06746-148.
+               CALL 'ZPA06746' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08320 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA06746 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN06523-252.
-               CALL 'ZEN06523' USING DFHCOMMAREA
+       CALL-ZEN07880-149.
+               CALL 'ZEN07880' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06523 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07880 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN07243-253.
-               CALL 'ZEN07243' USING DFHCOMMAREA
+       CALL-ZEN07927-150.
+               CALL 'ZEN07927' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07243 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07927 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE08337-254.
-               CALL 'ZRE08337' USING DFHCOMMAREA
+       CALL-ZMT07919-151.
+               CALL 'ZMT07919' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08337 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07919 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07991-255.
-               CALL 'ZMT07991' USING DFHCOMMAREA
+       CALL-ZPA07431-152.
+               CALL 'ZPA07431' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07991 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA07431 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06948-256.
-               CALL 'ZAG06948' USING DFHCOMMAREA
+       CALL-ZCL08308-153.
+               CALL 'ZCL08308' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06948 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL08308 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI08566-257.
-               CALL 'ZBI08566' USING DFHCOMMAREA
+       CALL-ZMT07102-154.
+               CALL 'ZMT07102' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI08566 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07102 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN06543-258.
-               CALL 'ZEN06543' USING DFHCOMMAREA
+       CALL-ZMT08078-155.
+               CALL 'ZMT08078' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06543 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT08078 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU08314-259.
-               CALL 'ZCU08314' USING DFHCOMMAREA
+       CALL-ZCL08162-156.
+               CALL 'ZCL08162' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU08314 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL08162 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07308-260.
-               CALL 'ZAG07308' USING DFHCOMMAREA
+       CALL-ZMT06824-157.
+               CALL 'ZMT06824' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07308 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06824 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW07400-261.
-               CALL 'ZUW07400' USING DFHCOMMAREA
+       CALL-ZHO08482-158.
+               CALL 'ZHO08482' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07400 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO08482 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZPA08529-262.
-               CALL 'ZPA08529' USING DFHCOMMAREA
+       CALL-ZPA08216-159.
+               CALL 'ZPA08216' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA08529 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA08216 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG08448-263.
-               CALL 'ZAG08448' USING DFHCOMMAREA
+       CALL-ZCL07005-160.
+               CALL 'ZCL07005' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG08448 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL07005 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06368-264.
-               CALL 'ZAG06368' USING DFHCOMMAREA
+       CALL-ZPA06363-161.
+               CALL 'ZPA06363' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06368 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA06363 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU07344-265.
-               CALL 'ZCU07344' USING DFHCOMMAREA
+       CALL-ZCU06700-162.
+               CALL 'ZCU06700' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07344 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU06700 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT08491-266.
-               CALL 'ZMT08491' USING DFHCOMMAREA
+       CALL-ZHO06574-163.
+               CALL 'ZHO06574' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT08491 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO06574 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI07076-267.
-               CALL 'ZBI07076' USING DFHCOMMAREA
+       CALL-ZBI07183-164.
+               CALL 'ZBI07183' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07076 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZBI07183 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07538-268.
-               CALL 'ZAG07538' USING DFHCOMMAREA
+       CALL-ZRE06463-165.
+               CALL 'ZRE06463' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07538 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE06463 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07505-269.
-               CALL 'ZCL07505' USING DFHCOMMAREA
+       CALL-ZPA07214-166.
+               CALL 'ZPA07214' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07505 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA07214 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06748-270.
-               CALL 'ZAG06748' USING DFHCOMMAREA
+       CALL-ZUW08465-167.
+               CALL 'ZUW08465' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06748 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZUW08465 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE08417-271.
-               CALL 'ZRE08417' USING DFHCOMMAREA
+       CALL-ZCU07409-168.
+               CALL 'ZCU07409' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08417 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU07409 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE07157-272.
-               CALL 'ZRE07157' USING DFHCOMMAREA
+       CALL-ZRE06340-169.
+               CALL 'ZRE06340' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07157 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE06340 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZPA07379-273.
-               CALL 'ZPA07379' USING DFHCOMMAREA
+       CALL-ZAG07650-170.
+               CALL 'ZAG07650' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA07379 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG07650 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT06791-274.
-               CALL 'ZMT06791' USING DFHCOMMAREA
+       CALL-ZRE07892-171.
+               CALL 'ZRE07892' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06791 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE07892 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI06416-275.
-               CALL 'ZBI06416' USING DFHCOMMAREA
+       CALL-ZUW07936-172.
+               CALL 'ZUW07936' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI06416 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZUW07936 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07178-276.
-               CALL 'ZAG07178' USING DFHCOMMAREA
+       CALL-ZCL08204-173.
+               CALL 'ZCL08204' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07178 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL08204 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE08197-277.
-               CALL 'ZRE08197' USING DFHCOMMAREA
+       CALL-ZCU08110-174.
+               CALL 'ZCU08110' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE08197 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU08110 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07365-278.
-               CALL 'ZCL07365' USING DFHCOMMAREA
+       CALL-ZBI06733-175.
+               CALL 'ZBI06733' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07365 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZBI06733 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT06511-279.
-               CALL 'ZMT06511' USING DFHCOMMAREA
+       CALL-ZHO06505-176.
+               CALL 'ZHO06505' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06511 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO06505 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07135-280.
-               CALL 'ZCL07135' USING DFHCOMMAREA
+       CALL-ZBI06791-177.
+               CALL 'ZBI06791' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07135 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZBI06791 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL06715-281.
-               CALL 'ZCL06715' USING DFHCOMMAREA
+       CALL-ZPA07872-178.
+               CALL 'ZPA07872' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL06715 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA07872 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG07518-282.
-               CALL 'ZAG07518' USING DFHCOMMAREA
+       CALL-ZMT07477-179.
+               CALL 'ZMT07477' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG07518 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07477 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW07310-283.
-               CALL 'ZUW07310' USING DFHCOMMAREA
+       CALL-ZAG08242-180.
+               CALL 'ZAG08242' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07310 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG08242 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZPA06679-284.
-               CALL 'ZPA06679' USING DFHCOMMAREA
+       CALL-ZRE06872-181.
+               CALL 'ZRE06872' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA06679 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE06872 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL07535-285.
-               CALL 'ZCL07535' USING DFHCOMMAREA
+       CALL-ZCL08456-182.
+               CALL 'ZCL08456' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL07535 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL08456 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE06597-286.
-               CALL 'ZRE06597' USING DFHCOMMAREA
+       CALL-ZBI08590-183.
+               CALL 'ZBI08590' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06597 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZBI08590 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT06761-287.
-               CALL 'ZMT06761' USING DFHCOMMAREA
+       CALL-ZMT06325-184.
+               CALL 'ZMT06325' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06761 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06325 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN08653-288.
-               CALL 'ZEN08653' USING DFHCOMMAREA
+       CALL-ZHO07969-185.
+               CALL 'ZHO07969' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08653 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07969 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT06661-289.
-               CALL 'ZMT06661' USING DFHCOMMAREA
+       CALL-ZUW08287-186.
+               CALL 'ZUW08287' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06661 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZUW08287 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCL06775-290.
-               CALL 'ZCL06775' USING DFHCOMMAREA
+       CALL-ZMT07765-187.
+               CALL 'ZMT07765' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCL06775 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07765 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI07506-291.
-               CALL 'ZBI07506' USING DFHCOMMAREA
+       CALL-ZPA08657-188.
+               CALL 'ZPA08657' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07506 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZPA08657 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN08413-292.
-               CALL 'ZEN08413' USING DFHCOMMAREA
+       CALL-ZBI06966-189.
+               CALL 'ZBI06966' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08413 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZBI06966 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN06553-293.
-               CALL 'ZEN06553' USING DFHCOMMAREA
+       CALL-ZHO07565-190.
+               CALL 'ZHO07565' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06553 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07565 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE07597-294.
-               CALL 'ZRE07597' USING DFHCOMMAREA
+       CALL-ZHO06867-191.
+               CALL 'ZHO06867' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07597 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO06867 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE07807-295.
-               CALL 'ZRE07807' USING DFHCOMMAREA
+       CALL-ZHO07316-192.
+               CALL 'ZHO07316' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE07807 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO07316 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI07956-296.
-               CALL 'ZBI07956' USING DFHCOMMAREA
+       CALL-ZEN06384-193.
+               CALL 'ZEN06384' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07956 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06384 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZPA07199-297.
-               CALL 'ZPA07199' USING DFHCOMMAREA
+       CALL-ZCU08138-194.
+               CALL 'ZCU08138' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZPA07199 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU08138 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO06802-298.
-               CALL 'ZHO06802' USING DFHCOMMAREA
+       CALL-ZMT06422-195.
+               CALL 'ZMT06422' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO06802 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06422 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI06356-299.
-               CALL 'ZBI06356' USING DFHCOMMAREA
+       CALL-ZMT07632-196.
+               CALL 'ZMT07632' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI06356 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07632 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI07906-300.
-               CALL 'ZBI07906' USING DFHCOMMAREA
+       CALL-ZEN06427-197.
+               CALL 'ZEN06427' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI07906 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06427 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08080-198.
+               CALL 'ZMT08080' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08080 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07365-199.
+               CALL 'ZAG07365' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07365 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO07799-200.
+               CALL 'ZHO07799' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO07799 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO07021-201.
+               CALL 'ZHO07021' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO07021 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08560-202.
+               CALL 'ZMT08560' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08560 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL08461-203.
+               CALL 'ZCL08461' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL08461 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07944-204.
+               CALL 'ZCU07944' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07944 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08368-205.
+               CALL 'ZMT08368' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08368 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07392-206.
+               CALL 'ZEN07392' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07392 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO07852-207.
+               CALL 'ZHO07852' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO07852 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07452-208.
+               CALL 'ZEN07452' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07452 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE07236-209.
+               CALL 'ZRE07236' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE07236 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU06350-210.
+               CALL 'ZCU06350' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU06350 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08112-211.
+               CALL 'ZMT08112' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08112 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE07184-212.
+               CALL 'ZRE07184' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE07184 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07078-213.
+               CALL 'ZEN07078' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07078 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI07089-214.
+               CALL 'ZBI07089' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI07089 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07998-215.
+               CALL 'ZMT07998' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07998 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA07361-216.
+               CALL 'ZPA07361' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA07361 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO06810-217.
+               CALL 'ZHO06810' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO06810 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL07678-218.
+               CALL 'ZCL07678' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL07678 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT06552-219.
+               CALL 'ZMT06552' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT06552 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07189-220.
+               CALL 'ZEN07189' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07189 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE07707-221.
+               CALL 'ZRE07707' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE07707 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL07376-222.
+               CALL 'ZCL07376' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL07376 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07583-223.
+               CALL 'ZCU07583' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07583 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07324-224.
+               CALL 'ZAG07324' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07324 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA07962-225.
+               CALL 'ZPA07962' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA07962 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN06624-226.
+               CALL 'ZEN06624' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN06624 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07096-227.
+               CALL 'ZEN07096' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07096 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI07911-228.
+               CALL 'ZBI07911' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI07911 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG06462-229.
+               CALL 'ZAG06462' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG06462 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07349-230.
+               CALL 'ZAG07349' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07349 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07859-231.
+               CALL 'ZAG07859' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07859 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07134-232.
+               CALL 'ZMT07134' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07134 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI07491-233.
+               CALL 'ZBI07491' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI07491 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07177-234.
+               CALL 'ZAG07177' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07177 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07967-235.
+               CALL 'ZMT07967' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07967 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT06892-236.
+               CALL 'ZMT06892' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT06892 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT06991-237.
+               CALL 'ZMT06991' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT06991 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08659-238.
+               CALL 'ZEN08659' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08659 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE08346-239.
+               CALL 'ZRE08346' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE08346 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG06924-240.
+               CALL 'ZAG06924' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG06924 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08221-241.
+               CALL 'ZMT08221' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08221 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07938-242.
+               CALL 'ZEN07938' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07938 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08140-243.
+               CALL 'ZMT08140' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08140 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI08337-244.
+               CALL 'ZBI08337' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI08337 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07559-245.
+               CALL 'ZMT07559' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07559 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO06502-246.
+               CALL 'ZHO06502' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO06502 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE06618-247.
+               CALL 'ZRE06618' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE06618 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO08046-248.
+               CALL 'ZHO08046' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO08046 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN06368-249.
+               CALL 'ZEN06368' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN06368 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07805-250.
+               CALL 'ZMT07805' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07805 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU06611-251.
+               CALL 'ZCU06611' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU06611 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT06450-252.
+               CALL 'ZMT06450' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT06450 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA06902-253.
+               CALL 'ZPA06902' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA06902 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI08524-254.
+               CALL 'ZBI08524' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI08524 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE06952-255.
+               CALL 'ZRE06952' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE06952 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07028-256.
+               CALL 'ZMT07028' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07028 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI06644-257.
+               CALL 'ZBI06644' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI06644 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO08599-258.
+               CALL 'ZHO08599' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO08599 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI08588-259.
+               CALL 'ZBI08588' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI08588 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07644-260.
+               CALL 'ZMT07644' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07644 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08198-261.
+               CALL 'ZMT08198' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08198 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW06904-262.
+               CALL 'ZUW06904' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW06904 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08666-263.
+               CALL 'ZEN08666' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08666 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO07318-264.
+               CALL 'ZHO07318' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO07318 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL06779-265.
+               CALL 'ZCL06779' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL06779 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07094-266.
+               CALL 'ZMT07094' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07094 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI06775-267.
+               CALL 'ZBI06775' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI06775 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08554-268.
+               CALL 'ZMT08554' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08554 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07311-269.
+               CALL 'ZCU07311' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07311 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW08501-270.
+               CALL 'ZUW08501' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW08501 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07760-271.
+               CALL 'ZCU07760' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07760 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO08670-272.
+               CALL 'ZHO08670' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO08670 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW08692-273.
+               CALL 'ZUW08692' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW08692 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW07230-274.
+               CALL 'ZUW07230' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW07230 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08480-275.
+               CALL 'ZEN08480' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08480 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE07007-276.
+               CALL 'ZRE07007' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE07007 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA08549-277.
+               CALL 'ZPA08549' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA08549 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08353-278.
+               CALL 'ZEN08353' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08353 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI07085-279.
+               CALL 'ZBI07085' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI07085 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07126-280.
+               CALL 'ZCU07126' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07126 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN07588-281.
+               CALL 'ZEN07588' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN07588 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07897-282.
+               CALL 'ZCU07897' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07897 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZBI07509-283.
+               CALL 'ZBI07509' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZBI07509 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA08347-284.
+               CALL 'ZPA08347' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA08347 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08587-285.
+               CALL 'ZMT08587' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08587 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZAG07255-286.
+               CALL 'ZAG07255' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZAG07255 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07291-287.
+               CALL 'ZCU07291' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07291 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN06963-288.
+               CALL 'ZEN06963' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN06963 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZEN08693-289.
+               CALL 'ZEN08693' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZEN08693 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT08442-290.
+               CALL 'ZMT08442' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT08442 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE06517-291.
+               CALL 'ZRE06517' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE06517 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCU07000-292.
+               CALL 'ZCU07000' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCU07000 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZCL06907-293.
+               CALL 'ZCL06907' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZCL06907 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO06605-294.
+               CALL 'ZHO06605' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO06605 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZRE06390-295.
+               CALL 'ZRE06390' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZRE06390 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07959-296.
+               CALL 'ZMT07959' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07959 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZMT07394-297.
+               CALL 'ZMT07394' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT07394 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO07788-298.
+               CALL 'ZHO07788' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO07788 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZPA07290-299.
+               CALL 'ZPA07290' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZPA07290 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZHO06402-300.
+               CALL 'ZHO06402' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZHO06402 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*

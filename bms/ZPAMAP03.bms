@@ -1,12 +1,17 @@
-ZPAMAP03 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),               X
-               LANG=COBOL,STORAGE=AUTO,TIOAPFX=YES
-ZPAMAP0I DFHMDI SIZE=(24,80)
-         DFHMDF POS=(1,1),LENGTH=20,ATTRB=(PROT),                      X
-               INITIAL='GENERATED VOLUME TEST'
+***********************************************************************
+* ZPAMAP03 -- generated volume-test mapset                              00000020
+*********************************************************************** 00000030
+         PRINT NOGEN
+ZPAMAP03 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),               X00000050
+               LANG=COBOL,STORAGE=AUTO,TIOAPFX=YES                      00000060
+         EJECT
+ZPAMAP0I DFHMDI SIZE=(24,80)                                            00000080
+         DFHMDF POS=(1,1),LENGTH=60,ATTRB=(PROT),INITIAL='BROKER ENQUIRX
+                  PF3 Exit'
 HDRTTL   DFHMDF POS=(3,1),LENGTH=40,ATTRB=(PROT)
 CUSTNO   DFHMDF POS=(5,20),LENGTH=10,ATTRB=(UNPROT,IC)
 POLNO    DFHMDF POS=(6,20),LENGTH=10,ATTRB=(UNPROT)
 PREMIUM  DFHMDF POS=(7,20),LENGTH=9,ATTRB=(UNPROT)
-ERRMSG   DFHMDF POS=(23,1),LENGTH=70,ATTRB=(PROT,BRT)
+ERRMSG   DFHMDF POS=(23,1),LENGTH=70,ATTRB=(PROT,BRT)   error line
          DFHMSD TYPE=FINAL
-         END
+         END                                                            00000170

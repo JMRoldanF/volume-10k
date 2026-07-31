@@ -86,18 +86,18 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
+                05 WS-T-AGENT-CODE     PIC X(12).
                 05 WS-T-REG-NUMBER     PIC X(12).
-                05 WS-T-BEDROOMS       PIC X(12).
-                05 WS-T-STATUS-CODE    PIC X(12).
-                05 WS-T-TAX-BAND       PIC X(12).
+                05 WS-T-BROKER-ID      PIC X(12).
+                05 WS-T-EQUITIES       PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZEN06403              PIC X(8) VALUE 'ZEN06403'.
-       01  MOD-ZEN07963              PIC X(8) VALUE 'ZEN07963'.
-       01  MOD-ZAG06758              PIC X(8) VALUE 'ZAG06758'.
-       01  MOD-ZEN06873              PIC X(8) VALUE 'ZEN06873'.
-       01  MOD-ZEN04083              PIC X(8) VALUE 'ZEN04083'.
+       01  MOD-ZEN06833              PIC X(8) VALUE 'ZEN06833'.
+       01  MOD-ZEN06965              PIC X(8) VALUE 'ZEN06965'.
+       01  MOD-ZEN07248              PIC X(8) VALUE 'ZEN07248'.
+       01  MOD-ZEN06313              PIC X(8) VALUE 'ZEN06313'.
+       01  MOD-ZEN07823              PIC X(8) VALUE 'ZEN07823'.
 
       * Dynamically resolved module names
        01  WS-SUBNAME-3              PIC X(8) VALUE SPACES.
@@ -115,12 +115,12 @@
                OPEN INPUT  INPUT-FILE.
                OPEN OUTPUT OUTPUT-FILE.
                OPEN OUTPUT REPORT-FILE.
-               PERFORM CALL-ZEN06403-001.
-               PERFORM CALL-ZEN07093-002.
-               PERFORM CALL-ZEN07963-003.
-               PERFORM CALL-ZAG06758-004.
-               PERFORM CALL-ZEN06873-005.
-               PERFORM CALL-ZEN04083-006.
+               PERFORM CALL-ZEN06833-001.
+               PERFORM CALL-ZEN07553-002.
+               PERFORM CALL-ZEN06965-003.
+               PERFORM CALL-ZEN07248-004.
+               PERFORM CALL-ZEN06313-005.
+               PERFORM CALL-ZEN07823-006.
                PERFORM UNTIL WS-EOF
                   READ INPUT-FILE
                        AT END MOVE 'Y' TO WS-EOF-FLAG
@@ -133,52 +133,52 @@
                CLOSE INPUT-FILE OUTPUT-FILE REPORT-FILE.
                GOBACK.
       *----------------------------------------------------------------*
-       CALL-ZEN06403-001.
-               CALL 'ZEN06403' USING DFHCOMMAREA
+       CALL-ZEN06833-001.
+               CALL 'ZEN06833' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06403 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06833 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN07093-002.
-               MOVE 'ZEN07093' TO WS-SUBNAME-3
+       CALL-ZEN07553-002.
+               MOVE 'ZEN07553' TO WS-SUBNAME-3
                CALL WS-SUBNAME-3 USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07093 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07553 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN07963-003.
-               CALL 'ZEN07963' USING DFHCOMMAREA
+       CALL-ZEN06965-003.
+               CALL 'ZEN06965' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07963 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06965 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG06758-004.
-               CALL 'ZAG06758' USING DFHCOMMAREA
+       CALL-ZEN07248-004.
+               CALL 'ZEN07248' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG06758 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07248 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN06873-005.
-               CALL 'ZEN06873' USING DFHCOMMAREA
+       CALL-ZEN06313-005.
+               CALL 'ZEN06313' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06873 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06313 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN04083-006.
-               CALL 'ZEN04083' USING DFHCOMMAREA
+       CALL-ZEN07823-006.
+               CALL 'ZEN07823' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN04083 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07823 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*

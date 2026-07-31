@@ -1,0 +1,16 @@
+***********************************************************************
+* ZMTMAP16 -- generated volume-test mapset                              00000020
+*********************************************************************** 00000030
+
+ZMTMAP16 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),               X00000050
+               LANG=COBOL,STORAGE=AUTO,TIOAPFX=YES                      00000060
+ZMTMAP1I DFHMDI SIZE=(24,80)                                            00000070
+         DFHMDF POS=(1,1),LENGTH=60,ATTRB=(PROT),INITIAL='CUSTOMER POLIX00000080
+               CY ENQUIRY -- ALL AMOUNTS IN GBP'                        00000090
+HDRTTL   DFHMDF POS=(3,1),LENGTH=40,ATTRB=(PROT)        screen title
+CUSTNO   DFHMDF POS=(5,20),LENGTH=10,ATTRB=(UNPROT,IC)  customer number
+POLNO    DFHMDF POS=(6,20),LENGTH=10,ATTRB=(UNPROT)     policy number   00000120
+PREMIUM  DFHMDF POS=(7,20),LENGTH=9,ATTRB=(UNPROT)                      00000130
+ERRMSG   DFHMDF POS=(23,1),LENGTH=70,ATTRB=(PROT,BRT)                   00000140
+ZMTMAP16 DFHMSD TYPE=FINAL                                              00000150
+         END                                                            00000160

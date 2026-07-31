@@ -56,19 +56,18 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
+                05 WS-T-VALUE          PIC X(12).
                 05 WS-T-BROKER-ID      PIC X(12).
                 05 WS-T-HOUSE-TYPE     PIC X(12).
-                05 WS-T-CC-RATING      PIC X(12).
-                05 WS-T-EXCESS         PIC X(12).
+                05 WS-T-COLOUR         PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZRE02987              PIC X(8) VALUE 'ZRE02987'.
-       01  MOD-ZRE03537              PIC X(8) VALUE 'ZRE03537'.
-       01  MOD-ZRE03867              PIC X(8) VALUE 'ZRE03867'.
-       01  MOD-ZRE06047              PIC X(8) VALUE 'ZRE06047'.
-       01  MOD-ZRE05277              PIC X(8) VALUE 'ZRE05277'.
-       01  MOD-ZCU09998              PIC X(8) VALUE 'ZCU09998'.
+       01  MOD-ZRE03075              PIC X(8) VALUE 'ZRE03075'.
+       01  MOD-ZHO03479              PIC X(8) VALUE 'ZHO03479'.
+       01  MOD-ZRE04085              PIC X(8) VALUE 'ZRE04085'.
+       01  MOD-ZRE05505              PIC X(8) VALUE 'ZRE05505'.
+       01  MOD-ZCU05757              PIC X(8) VALUE 'ZCU05757'.
 
       ******************************************************************
       * L I N K A G E     S E C T I O N                                *
@@ -77,8 +76,7 @@
        01  DFHCOMMAREA.
                COPY ZKCOMMON.
                COPY ZKRE0005.
-               COPY ZKRE0004.
-               COPY ZKRE0003.
+               COPY ZKRE0011.
       ******************************************************************
       * P R O C E D U R E S                                            *
       ******************************************************************
@@ -97,77 +95,65 @@
                END-IF.
                MOVE EIBCALEN TO WS-CALEN.
                SET WS-ADDR-COMMAREA TO ADDRESS OF DFHCOMMAREA.
-               PERFORM CALL-ZRE02987-001.
-               PERFORM CALL-ZRE03537-002.
-               PERFORM CALL-ZRE03867-003.
-               PERFORM CALL-ZRE06047-004.
-               PERFORM CALL-ZRE05277-005.
-               PERFORM CALL-ZCU09998-006.
+               PERFORM CALL-ZRE03075-001.
+               PERFORM CALL-ZHO03479-002.
+               PERFORM CALL-ZRE04085-003.
+               PERFORM CALL-ZRE05505-004.
+               PERFORM CALL-ZCU05757-005.
                EXEC CICS RETURN END-EXEC.
       *----------------------------------------------------------------*
-       CALL-ZRE02987-001.
-               EXEC CICS LINK PROGRAM('ZRE02987')
+       CALL-ZRE03075-001.
+               EXEC CICS LINK PROGRAM('ZRE03075')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE02987 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE03075 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE03537-002.
-               EXEC CICS LINK PROGRAM('ZRE03537')
+       CALL-ZHO03479-002.
+               EXEC CICS LINK PROGRAM('ZHO03479')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE03537 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZHO03479 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE03867-003.
-               EXEC CICS LINK PROGRAM('ZRE03867')
+       CALL-ZRE04085-003.
+               EXEC CICS LINK PROGRAM('ZRE04085')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE03867 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE04085 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE06047-004.
-               EXEC CICS LINK PROGRAM('ZRE06047')
+       CALL-ZRE05505-004.
+               EXEC CICS LINK PROGRAM('ZRE05505')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE06047 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE05505 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZRE05277-005.
-               EXEC CICS LINK PROGRAM('ZRE05277')
+       CALL-ZCU05757-005.
+               EXEC CICS LINK PROGRAM('ZCU05757')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZRE05277 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
-      *----------------------------------------------------------------*
-       CALL-ZCU09998-006.
-               EXEC CICS LINK PROGRAM('ZCU09998')
-                         COMMAREA(DFHCOMMAREA)
-                         LENGTH(WS-CALEN)
-                         RESP(WS-RESP)
-               END-EXEC.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU09998 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU05757 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*

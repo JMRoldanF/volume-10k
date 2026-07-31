@@ -1,12 +1,17 @@
-ZUWMAP01 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),               X
+*********************************************************************** 00000010
+* ZUWMAP01 -- generated volume-test mapset
+***********************************************************************
+ZUWMAP01 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),  map header   X00000040
                LANG=COBOL,STORAGE=AUTO,TIOAPFX=YES
-ZUWMAP0I DFHMDI SIZE=(24,80)
-         DFHMDF POS=(1,1),LENGTH=20,ATTRB=(PROT),                      X
-               INITIAL='GENERATED VOLUME TEST'
-HDRTTL   DFHMDF POS=(3,1),LENGTH=40,ATTRB=(PROT)
+         SPACE 2
+ZUWMAP0I DFHMDI SIZE=(24,80)                                            00000070
+         DFHMDF POS=(1,1),LENGTH=60,ATTRB=(PROT),INITIAL='GENERATED VOLX00000080
+               UME TEST'                                                00000090
+HDRTTL   DFHMDF POS=(3,1),LENGTH=40,ATTRB=(PROT)        screen title    00000100
+
 CUSTNO   DFHMDF POS=(5,20),LENGTH=10,ATTRB=(UNPROT,IC)
 POLNO    DFHMDF POS=(6,20),LENGTH=10,ATTRB=(UNPROT)
-PREMIUM  DFHMDF POS=(7,20),LENGTH=9,ATTRB=(UNPROT)
+PREMIUM  DFHMDF POS=(7,20),LENGTH=9,ATTRB=(UNPROT)                      00000140
 ERRMSG   DFHMDF POS=(23,1),LENGTH=70,ATTRB=(PROT,BRT)
-         DFHMSD TYPE=FINAL
+ZUWMAP01 DFHMSD TYPE=FINAL
          END

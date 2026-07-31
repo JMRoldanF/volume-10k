@@ -56,23 +56,20 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
-                05 WS-T-MODEL          PIC X(12).
-                05 WS-T-WITH-PROFITS   PIC X(12).
-                05 WS-T-ROOF-TYPE      PIC X(12).
-                05 WS-T-EQUITIES       PIC X(12).
+                05 WS-T-VALUE          PIC X(12).
+                05 WS-T-BEDROOMS       PIC X(12).
+                05 WS-T-STATUS-CODE    PIC X(12).
+                05 WS-T-PREMIUM        PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZAG02128              PIC X(8) VALUE 'ZAG02128'.
-       01  MOD-ZAG02558              PIC X(8) VALUE 'ZAG02558'.
-       01  MOD-ZCU00294              PIC X(8) VALUE 'ZCU00294'.
-
-      * Dynamically resolved module names
-       01  WS-PROGNAME-7             PIC X(8) VALUE SPACES.
-       01  WS-PROGNAME-8             PIC X(8) VALUE SPACES.
+       01  MOD-ZAG01360              PIC X(8) VALUE 'ZAG01360'.
+       01  MOD-ZRE01148              PIC X(8) VALUE 'ZRE01148'.
+       01  MOD-ZAG02678              PIC X(8) VALUE 'ZAG02678'.
+       01  MOD-ZCL09999              PIC X(8) VALUE 'ZCL09999'.
 
       * BMS mapset copy
-           COPY ZAGMAP02.
+           COPY ZAGMAP04.
 
       ******************************************************************
       * L I N K A G E     S E C T I O N                                *
@@ -80,7 +77,6 @@
        LINKAGE SECTION.
        01  DFHCOMMAREA.
                COPY ZKCOMMON.
-               COPY ZKAG0010.
                COPY ZKAG0004.
       ******************************************************************
       * P R O C E D U R E S                                            *
@@ -95,71 +91,71 @@
                IF EIBCALEN IS EQUAL TO ZERO
                   MOVE ' NO COMMAREA RECEIVED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
-                  EXEC CICS ABEND ABCODE('LGSQ')
+                  EXEC CICS ABEND ABCODE('LGCA')
                             NODUMP END-EXEC
                END-IF.
                MOVE EIBCALEN TO WS-CALEN.
                SET WS-ADDR-COMMAREA TO ADDRESS OF DFHCOMMAREA.
-               PERFORM CALL-ZAG02128-001.
-               PERFORM CALL-ZAG02558-002.
-               PERFORM CALL-ZAG02338-003.
-               PERFORM CALL-ZCU00294-004.
-               PERFORM CALL-ZBI10000-005.
+               PERFORM CALL-ZAG01360-001.
+               PERFORM CALL-ZRE01148-002.
+               PERFORM CALL-ZAG02678-003.
+               PERFORM CALL-ZAG00569-004.
+               PERFORM CALL-ZCL09999-005.
                EXEC CICS RETURN END-EXEC.
       *----------------------------------------------------------------*
-       CALL-ZAG02128-001.
-               EXEC CICS LINK PROGRAM('ZAG02128')
+       CALL-ZAG01360-001.
+               EXEC CICS LINK PROGRAM('ZAG01360')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG02128 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG01360 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG02558-002.
-               EXEC CICS LINK PROGRAM('ZAG02558')
+       CALL-ZRE01148-002.
+               EXEC CICS LINK PROGRAM('ZRE01148')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG02558 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZRE01148 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZAG02338-003.
-               MOVE 'ZAG02338' TO WS-PROGNAME-7
-               EXEC CICS LINK PROGRAM(WS-PROGNAME-7)
+       CALL-ZAG02678-003.
+               EXEC CICS LINK PROGRAM('ZAG02678')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZAG02338 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG02678 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZCU00294-004.
-               EXEC CICS XCTL PROGRAM('ZCU00294')
-                         COMMAREA(DFHCOMMAREA)
-                         LENGTH(WS-CALEN)
+       CALL-ZAG00569-004.
+               EXEC CICS START TRANSID('Z0FT')
+                         FROM(WS-KEY-AREA)
+                         LENGTH(20)
+                         RESP(WS-RESP)
                END-EXEC.
+      * TRANSID Z0FT is defined against ZAG00569
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU00294 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG00569 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZBI10000-005.
-               MOVE 'ZBI10000' TO WS-PROGNAME-8
-               EXEC CICS LINK PROGRAM(WS-PROGNAME-8)
+       CALL-ZCL09999-005.
+               EXEC CICS LINK PROGRAM('ZCL09999')
                          COMMAREA(DFHCOMMAREA)
                          LENGTH(WS-CALEN)
                          RESP(WS-RESP)
                END-EXEC.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZBI10000 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCL09999 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*

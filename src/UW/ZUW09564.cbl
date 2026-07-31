@@ -86,16 +86,17 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
-                05 WS-T-STATUS-CODE    PIC X(12).
+                05 WS-T-HOUSE-TYPE     PIC X(12).
+                05 WS-T-MODEL          PIC X(12).
                 05 WS-T-VALUE          PIC X(12).
-                05 WS-T-EXCESS         PIC X(12).
-                05 WS-T-SUM-ASSURED    PIC X(12).
+                05 WS-T-REG-NUMBER     PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZUW08520              PIC X(8) VALUE 'ZUW08520'.
-       01  MOD-ZUW07690              PIC X(8) VALUE 'ZUW07690'.
-       01  MOD-ZUW08000              PIC X(8) VALUE 'ZUW08000'.
+       01  MOD-ZMT07066              PIC X(8) VALUE 'ZMT07066'.
+       01  MOD-ZMT08558              PIC X(8) VALUE 'ZMT08558'.
+       01  MOD-ZMT06322              PIC X(8) VALUE 'ZMT06322'.
+       01  MOD-ZUW04384              PIC X(8) VALUE 'ZUW04384'.
 
        01  WS-FILE-STATUS            PIC X(2) VALUE SPACES.
        01  WS-EOF-FLAG               PIC X    VALUE 'N'.
@@ -110,9 +111,10 @@
                OPEN INPUT  INPUT-FILE.
                OPEN OUTPUT OUTPUT-FILE.
                OPEN OUTPUT REPORT-FILE.
-               PERFORM CALL-ZUW08520-001.
-               PERFORM CALL-ZUW07690-002.
-               PERFORM CALL-ZUW08000-003.
+               PERFORM CALL-ZMT07066-001.
+               PERFORM CALL-ZMT08558-002.
+               PERFORM CALL-ZMT06322-003.
+               PERFORM CALL-ZUW04384-004.
                PERFORM UNTIL WS-EOF
                   READ INPUT-FILE
                        AT END MOVE 'Y' TO WS-EOF-FLAG
@@ -125,27 +127,35 @@
                CLOSE INPUT-FILE OUTPUT-FILE REPORT-FILE.
                GOBACK.
       *----------------------------------------------------------------*
-       CALL-ZUW08520-001.
-               CALL 'ZUW08520' USING DFHCOMMAREA
+       CALL-ZMT07066-001.
+               CALL 'ZMT07066' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08520 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07066 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW07690-002.
-               CALL 'ZUW07690' USING DFHCOMMAREA
+       CALL-ZMT08558-002.
+               CALL 'ZMT08558' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW07690 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT08558 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZUW08000-003.
-               CALL 'ZUW08000' USING DFHCOMMAREA
+       CALL-ZMT06322-003.
+               CALL 'ZMT06322' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZUW08000 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06322 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
+      *----------------------------------------------------------------*
+       CALL-ZUW04384-004.
+               CALL 'ZUW04384' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZUW04384 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*

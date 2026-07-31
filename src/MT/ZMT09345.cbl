@@ -86,17 +86,19 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
+                05 WS-T-CC-RATING      PIC X(12).
                 05 WS-T-STATUS-CODE    PIC X(12).
-                05 WS-T-SUM-ASSURED    PIC X(12).
+                05 WS-T-BROKER-ID      PIC X(12).
                 05 WS-T-COLOUR         PIC X(12).
-                05 WS-T-HOUSE-TYPE     PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZCU07594              PIC X(8) VALUE 'ZCU07594'.
-       01  MOD-ZMT08641              PIC X(8) VALUE 'ZMT08641'.
-       01  MOD-ZMT07201              PIC X(8) VALUE 'ZMT07201'.
-       01  MOD-ZMT04081              PIC X(8) VALUE 'ZMT04081'.
+       01  MOD-ZMT08236              PIC X(8) VALUE 'ZMT08236'.
+       01  MOD-ZMT07981              PIC X(8) VALUE 'ZMT07981'.
+       01  MOD-ZMT08003              PIC X(8) VALUE 'ZMT08003'.
+       01  MOD-ZCU07628              PIC X(8) VALUE 'ZCU07628'.
+       01  MOD-ZMT06604              PIC X(8) VALUE 'ZMT06604'.
+       01  MOD-ZMT03154              PIC X(8) VALUE 'ZMT03154'.
 
        01  WS-FILE-STATUS            PIC X(2) VALUE SPACES.
        01  WS-EOF-FLAG               PIC X    VALUE 'N'.
@@ -111,14 +113,12 @@
                OPEN INPUT  INPUT-FILE.
                OPEN OUTPUT OUTPUT-FILE.
                OPEN OUTPUT REPORT-FILE.
-               PERFORM CALL-ZCU07594-001.
-               PERFORM CALL-ZMT08641-002.
-               PERFORM CALL-ZMT07201-003.
-               PERFORM CALL-ZMT04081-004.
-               PERFORM CHECK-STATUS-CODE-0001.
-               PERFORM EXPAND-HOUSE-TYPE-0003.
-               PERFORM AUDIT-ROOF-TYPE-0004.
-               PERFORM REFRESH-REG-NUMBER-0005.
+               PERFORM CALL-ZMT08236-001.
+               PERFORM CALL-ZMT07981-002.
+               PERFORM CALL-ZMT08003-003.
+               PERFORM CALL-ZCU07628-004.
+               PERFORM CALL-ZMT06604-005.
+               PERFORM CALL-ZMT03154-006.
                PERFORM UNTIL WS-EOF
                   READ INPUT-FILE
                        AT END MOVE 'Y' TO WS-EOF-FLAG
@@ -131,73 +131,53 @@
                CLOSE INPUT-FILE OUTPUT-FILE REPORT-FILE.
                GOBACK.
       *----------------------------------------------------------------*
-       CALL-ZCU07594-001.
-               CALL 'ZCU07594' USING DFHCOMMAREA
+       CALL-ZMT08236-001.
+               CALL 'ZMT08236' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZCU07594 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT08236 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT08641-002.
-               CALL 'ZMT08641' USING DFHCOMMAREA
+       CALL-ZMT07981-002.
+               CALL 'ZMT07981' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT08641 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07981 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07201-003.
-               CALL 'ZMT07201' USING DFHCOMMAREA
+       CALL-ZMT08003-003.
+               CALL 'ZMT08003' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07201 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT08003 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT04081-004.
-               CALL 'ZMT04081' USING DFHCOMMAREA
+       CALL-ZCU07628-004.
+               CALL 'ZCU07628' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT04081 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZCU07628 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CHECK-STATUS-CODE-0001.
-               IF WS-KEY-CUSTOMER = ZERO
-                  MOVE ' NO STATUS-CODE' TO EM-VARIABLE
-                  MOVE '01' TO WS-STATUS-CODE
-               ELSE
-                  MOVE '00' TO WS-STATUS-CODE
-               END-IF.
-      *----------------------------------------------------------------*
-       CHECK-BEDROOMS-0002.
-               INSPECT WS-KEY-CHAR REPLACING ALL SPACES BY '0'.
-               IF WS-STATUS-FAILED
+       CALL-ZMT06604-005.
+               CALL 'ZMT06604' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT06604 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       EXPAND-HOUSE-TYPE-0003.
-               UNSTRING WS-KEY-CHAR DELIMITED BY '/'
-                             INTO WS-KEY-CUSTOMER
-                                  WS-KEY-POLICY
-               END-UNSTRING.
-      *----------------------------------------------------------------*
-       AUDIT-ROOF-TYPE-0004.
-               MOVE 'ROOF-TYPE' TO WS-T-AMOUNT(1)
-               SEARCH ALL WS-TABLE-ENTRY
-                  AT END MOVE '01' TO WS-STATUS-CODE
-                  WHEN WS-T-AMOUNT(WS-IX) = WS-PREMIUM-TOTAL
-                       CONTINUE
-               END-SEARCH.
-      *----------------------------------------------------------------*
-       REFRESH-REG-NUMBER-0005.
-               EXEC CICS ASKTIME ABSTIME(ABS-TIME)
-               END-EXEC.
-               EXEC CICS FORMATTIME ABSTIME(ABS-TIME)
-                         MMDDYYYY(DATE1)
-                         TIME(TIME1)
-               END-EXEC.
+       CALL-ZMT03154-006.
+               CALL 'ZMT03154' USING DFHCOMMAREA
+                         WS-STATUS-CODE.
+               IF WS-RESP NOT = DFHRESP(NORMAL)
+                  MOVE ' LINK ZMT03154 FAILED' TO EM-VARIABLE
+                  PERFORM WRITE-ERROR-MESSAGE
+               END-IF.
       *----------------------------------------------------------------*
        WRITE-ERROR-MESSAGE.
                EXEC CICS ASKTIME ABSTIME(ABS-TIME) END-EXEC.

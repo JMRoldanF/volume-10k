@@ -86,18 +86,18 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
-                05 WS-T-WITH-PROFITS   PIC X(12).
-                05 WS-T-VALUE          PIC X(12).
-                05 WS-T-HOUSE-TYPE     PIC X(12).
-                05 WS-T-EQUITIES       PIC X(12).
+                05 WS-T-CC-RATING      PIC X(12).
+                05 WS-T-BROKER-ID      PIC X(12).
+                05 WS-T-SUM-ASSURED    PIC X(12).
+                05 WS-T-BEDROOMS       PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZEN06893              PIC X(8) VALUE 'ZEN06893'.
-       01  MOD-ZMT08591              PIC X(8) VALUE 'ZMT08591'.
-       01  MOD-ZMT06331              PIC X(8) VALUE 'ZMT06331'.
-       01  MOD-ZMT07761              PIC X(8) VALUE 'ZMT07761'.
-       01  MOD-ZMT07301              PIC X(8) VALUE 'ZMT07301'.
+       01  MOD-ZMT06667              PIC X(8) VALUE 'ZMT06667'.
+       01  MOD-ZMT07285              PIC X(8) VALUE 'ZMT07285'.
+       01  MOD-ZMT07619              PIC X(8) VALUE 'ZMT07619'.
+       01  MOD-ZMT07780              PIC X(8) VALUE 'ZMT07780'.
+       01  MOD-ZAG07004              PIC X(8) VALUE 'ZAG07004'.
 
        01  WS-FILE-STATUS            PIC X(2) VALUE SPACES.
        01  WS-EOF-FLAG               PIC X    VALUE 'N'.
@@ -112,11 +112,11 @@
                OPEN INPUT  INPUT-FILE.
                OPEN OUTPUT OUTPUT-FILE.
                OPEN OUTPUT REPORT-FILE.
-               PERFORM CALL-ZEN06893-001.
-               PERFORM CALL-ZMT08591-002.
-               PERFORM CALL-ZMT06331-003.
-               PERFORM CALL-ZMT07761-004.
-               PERFORM CALL-ZMT07301-005.
+               PERFORM CALL-ZMT06667-001.
+               PERFORM CALL-ZMT07285-002.
+               PERFORM CALL-ZMT07619-003.
+               PERFORM CALL-ZMT07780-004.
+               PERFORM CALL-ZAG07004-005.
                PERFORM UNTIL WS-EOF
                   READ INPUT-FILE
                        AT END MOVE 'Y' TO WS-EOF-FLAG
@@ -129,43 +129,43 @@
                CLOSE INPUT-FILE OUTPUT-FILE REPORT-FILE.
                GOBACK.
       *----------------------------------------------------------------*
-       CALL-ZEN06893-001.
-               CALL 'ZEN06893' USING DFHCOMMAREA
+       CALL-ZMT06667-001.
+               CALL 'ZMT06667' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN06893 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT06667 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT08591-002.
-               CALL 'ZMT08591' USING DFHCOMMAREA
+       CALL-ZMT07285-002.
+               CALL 'ZMT07285' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT08591 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07285 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT06331-003.
-               CALL 'ZMT06331' USING DFHCOMMAREA
+       CALL-ZMT07619-003.
+               CALL 'ZMT07619' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT06331 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07619 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07761-004.
-               CALL 'ZMT07761' USING DFHCOMMAREA
+       CALL-ZMT07780-004.
+               CALL 'ZMT07780' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07761 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZMT07780 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZMT07301-005.
-               CALL 'ZMT07301' USING DFHCOMMAREA
+       CALL-ZAG07004-005.
+               CALL 'ZAG07004' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZMT07301 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZAG07004 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*

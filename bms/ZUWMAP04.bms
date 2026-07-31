@@ -1,12 +1,16 @@
-ZUWMAP04 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),               X
+***********************************************************************
+* ZUWMAP04 -- generated volume-test mapset
+***********************************************************************
+ZUWMAP04 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),  map header   -
                LANG=COBOL,STORAGE=AUTO,TIOAPFX=YES
 ZUWMAP0I DFHMDI SIZE=(24,80)
-         DFHMDF POS=(1,1),LENGTH=20,ATTRB=(PROT),                      X
-               INITIAL='GENERATED VOLUME TEST'
+         DFHMDF POS=(1,1),LENGTH=60,ATTRB=(PROT),INITIAL='Press PF9 for-
+                the previous screen, PF3 to exit'
 HDRTTL   DFHMDF POS=(3,1),LENGTH=40,ATTRB=(PROT)
 CUSTNO   DFHMDF POS=(5,20),LENGTH=10,ATTRB=(UNPROT,IC)
 POLNO    DFHMDF POS=(6,20),LENGTH=10,ATTRB=(UNPROT)
-PREMIUM  DFHMDF POS=(7,20),LENGTH=9,ATTRB=(UNPROT)
+PREMIUM  DFHMDF POS=(7,20),LENGTH=9,ATTRB=(UNPROT)      annual premium
 ERRMSG   DFHMDF POS=(23,1),LENGTH=70,ATTRB=(PROT,BRT)
          DFHMSD TYPE=FINAL
+
          END

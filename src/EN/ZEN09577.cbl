@@ -86,20 +86,20 @@
              03 WS-TABLE-COUNT         PIC S9(4) COMP VALUE +0.
              03 WS-TABLE-ENTRY OCCURS 1 TO 250 TIMES
                         DEPENDING ON WS-TABLE-COUNT.
-                05 WS-T-VALUE          PIC X(12).
-                05 WS-T-EXCESS         PIC X(12).
-                05 WS-T-CC-RATING      PIC X(12).
-                05 WS-T-EQUITIES       PIC X(12).
+                05 WS-T-MODEL          PIC X(12).
+                05 WS-T-BROKER-ID      PIC X(12).
+                05 WS-T-BEDROOMS       PIC X(12).
+                05 WS-T-POSTCODE       PIC X(12).
                 05 WS-T-AMOUNT           PIC S9(7)V99 COMP-3.
 
       * Called module names
-       01  MOD-ZEN08353              PIC X(8) VALUE 'ZEN08353'.
-       01  MOD-ZEN07253              PIC X(8) VALUE 'ZEN07253'.
-       01  MOD-ZHO08662              PIC X(8) VALUE 'ZHO08662'.
-       01  MOD-ZEN08323              PIC X(8) VALUE 'ZEN08323'.
-       01  MOD-ZEN08673              PIC X(8) VALUE 'ZEN08673'.
-       01  MOD-ZEN08393              PIC X(8) VALUE 'ZEN08393'.
-       01  MOD-ZEN04213              PIC X(8) VALUE 'ZEN04213'.
+       01  MOD-ZEN07785              PIC X(8) VALUE 'ZEN07785'.
+       01  MOD-ZEN06346              PIC X(8) VALUE 'ZEN06346'.
+       01  MOD-ZUW07230              PIC X(8) VALUE 'ZUW07230'.
+
+      * Dynamically resolved module names
+       01  WS-SUBNAME-5              PIC X(8) VALUE SPACES.
+       01  WS-SUBNAME-6              PIC X(8) VALUE SPACES.
 
        01  WS-FILE-STATUS            PIC X(2) VALUE SPACES.
        01  WS-EOF-FLAG               PIC X    VALUE 'N'.
@@ -114,15 +114,13 @@
                OPEN INPUT  INPUT-FILE.
                OPEN OUTPUT OUTPUT-FILE.
                OPEN OUTPUT REPORT-FILE.
-               PERFORM CALL-ZEN08353-001.
-               PERFORM CALL-ZHO08662-003.
-               PERFORM CALL-ZEN08323-004.
-               PERFORM CALL-ZEN08673-005.
-               PERFORM CALL-ZEN08393-006.
-               PERFORM CALL-ZEN04213-007.
-               PERFORM RESOLVE-POSTCODE-0001.
-               PERFORM NORMALISE-BROKER-ID-0002.
-               PERFORM CHECK-MANAGED-FUND-0003.
+               PERFORM CALL-ZEN07785-001.
+               PERFORM CALL-ZUW07230-003.
+               PERFORM CALL-ZEN06303-004.
+               PERFORM CALL-ZEN03357-005.
+               PERFORM DERIVE-COLOUR-0001.
+               PERFORM FORMAT-AGENT-CODE-0002.
+               PERFORM NORMALISE-MODEL-0003.
                PERFORM UNTIL WS-EOF
                   READ INPUT-FILE
                        AT END MOVE 'Y' TO WS-EOF-FLAG
@@ -135,63 +133,63 @@
                CLOSE INPUT-FILE OUTPUT-FILE REPORT-FILE.
                GOBACK.
       *----------------------------------------------------------------*
-       CALL-ZEN08353-001.
-               CALL 'ZEN08353' USING DFHCOMMAREA
+       CALL-ZEN07785-001.
+               CALL 'ZEN07785' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08353 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN07785 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN07253-002.
-               CALL 'ZEN07253' USING DFHCOMMAREA
+       CALL-ZEN06346-002.
+               CALL 'ZEN06346' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN07253 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06346 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZHO08662-003.
-               CALL 'ZHO08662' USING DFHCOMMAREA
+       CALL-ZUW07230-003.
+               CALL 'ZUW07230' USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZHO08662 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZUW07230 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN08323-004.
-               CALL 'ZEN08323' USING DFHCOMMAREA
+       CALL-ZEN06303-004.
+               MOVE 'ZEN06303' TO WS-SUBNAME-5
+               CALL WS-SUBNAME-5 USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08323 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN06303 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN08673-005.
-               CALL 'ZEN08673' USING DFHCOMMAREA
+       CALL-ZEN03357-005.
+               MOVE 'ZEN03357' TO WS-SUBNAME-6
+               CALL WS-SUBNAME-6 USING DFHCOMMAREA
                          WS-STATUS-CODE.
                IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08673 FAILED' TO EM-VARIABLE
+                  MOVE ' LINK ZEN03357 FAILED' TO EM-VARIABLE
                   PERFORM WRITE-ERROR-MESSAGE
                END-IF.
       *----------------------------------------------------------------*
-       CALL-ZEN08393-006.
-               CALL 'ZEN08393' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN08393 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
+       DERIVE-COLOUR-0001.
+               MOVE SPACES TO WS-KEY-CHAR.
+               STRING WS-KEY-CUSTOMER DELIMITED BY SIZE
+                         '/'              DELIMITED BY SIZE
+                         WS-KEY-POLICY    DELIMITED BY SIZE
+                         INTO WS-KEY-CHAR
+               END-STRING.
       *----------------------------------------------------------------*
-       CALL-ZEN04213-007.
-               CALL 'ZEN04213' USING DFHCOMMAREA
-                         WS-STATUS-CODE.
-               IF WS-RESP NOT = DFHRESP(NORMAL)
-                  MOVE ' LINK ZEN04213 FAILED' TO EM-VARIABLE
-                  PERFORM WRITE-ERROR-MESSAGE
-               END-IF.
+       FORMAT-AGENT-CODE-0002.
+               UNSTRING WS-KEY-CHAR DELIMITED BY '/'
+                             INTO WS-KEY-CUSTOMER
+                                  WS-KEY-POLICY
+               END-UNSTRING.
       *----------------------------------------------------------------*
-       RESOLVE-POSTCODE-0001.
+       NORMALISE-MODEL-0003.
                PERFORM VARYING WS-IX FROM 1 BY 1
                            UNTIL WS-IX > WS-TABLE-COUNT
                   ADD WS-T-AMOUNT(WS-IX) TO WS-PREMIUM-TOTAL
@@ -199,22 +197,6 @@
                      ADD 1 TO WS-ENTRY-COUNT
                   END-IF
                END-PERFORM.
-      *----------------------------------------------------------------*
-       NORMALISE-BROKER-ID-0002.
-               IF WS-KEY-CUSTOMER = ZERO
-                  MOVE ' NO BROKER-ID' TO EM-VARIABLE
-                  MOVE '01' TO WS-STATUS-CODE
-               ELSE
-                  MOVE '00' TO WS-STATUS-CODE
-               END-IF.
-      *----------------------------------------------------------------*
-       CHECK-MANAGED-FUND-0003.
-               EXEC CICS ASKTIME ABSTIME(ABS-TIME)
-               END-EXEC.
-               EXEC CICS FORMATTIME ABSTIME(ABS-TIME)
-                         MMDDYYYY(DATE1)
-                         TIME(TIME1)
-               END-EXEC.
       *----------------------------------------------------------------*
        WRITE-ERROR-MESSAGE.
                EXEC CICS ASKTIME ABSTIME(ABS-TIME) END-EXEC.

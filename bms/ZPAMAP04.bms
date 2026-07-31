@@ -1,12 +1,17 @@
+***********************************************************************
+* ZPAMAP04 -- generated volume-test mapset
+***********************************************************************
+ZPAMAP04 TITLE 'ZPAMAP04 SCREEN LAYOUT'
 ZPAMAP04 DFHMSD TYPE=MAP,MODE=INOUT,CTRL=(FREEKB,FRSET),               X
                LANG=COBOL,STORAGE=AUTO,TIOAPFX=YES
+         SPACE 1
 ZPAMAP0I DFHMDI SIZE=(24,80)
-         DFHMDF POS=(1,1),LENGTH=20,ATTRB=(PROT),                      X
-               INITIAL='GENERATED VOLUME TEST'
-HDRTTL   DFHMDF POS=(3,1),LENGTH=40,ATTRB=(PROT)
+         DFHMDF POS=(1,1),LENGTH=60,ATTRB=(PROT),INITIAL='Enter a custoX
+               mer number and press Enter to continue'
+HDRTTL   DFHMDF POS=(3,1),LENGTH=40,ATTRB=(PROT)        screen title
 CUSTNO   DFHMDF POS=(5,20),LENGTH=10,ATTRB=(UNPROT,IC)
 POLNO    DFHMDF POS=(6,20),LENGTH=10,ATTRB=(UNPROT)
 PREMIUM  DFHMDF POS=(7,20),LENGTH=9,ATTRB=(UNPROT)
 ERRMSG   DFHMDF POS=(23,1),LENGTH=70,ATTRB=(PROT,BRT)
-         DFHMSD TYPE=FINAL
+ZPAMAP04 DFHMSD TYPE=FINAL
          END
