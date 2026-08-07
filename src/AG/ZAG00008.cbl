@@ -89,6 +89,8 @@
       ******************************************************************
       * P R O C E D U R E S                                            *
       ******************************************************************
+      * Touched to re-parse this program alone; the COPY list is the   *
+      * same, so ZKDEEP01..03 stay carried and must be walked to.      *
        PROCEDURE DIVISION.
       *----------------------------------------------------------------*
        MAINLINE SECTION.
