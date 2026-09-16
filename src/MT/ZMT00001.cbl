@@ -80,6 +80,8 @@
       ******************************************************************
       * P R O C E D U R E S                                            *
       ******************************************************************
+      * Touched to open a fourth generation; what this program COPYs   *
+      * is unchanged, so only this file re-parses.                     *
        PROCEDURE DIVISION.
       *----------------------------------------------------------------*
        MAINLINE SECTION.
